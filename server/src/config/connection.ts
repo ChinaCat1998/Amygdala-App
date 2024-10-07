@@ -19,10 +19,10 @@ const sequelize = process.env.DB_URL
         }
         );
 
-// Create schema if it doesn't exist
+// Create schema if it doesn't exist 
 sequelize.query('CREATE SCHEMA IF NOT EXISTS amygdalaDB;')
     .then(() => {
-        console.log('Schema created or already exists');
+        console.log('amygdalaDB schema created or already exists');
     })
     .catch(err => {
         console.error('Error creating schema:', err);
