@@ -16,7 +16,7 @@ export class JournalEntry extends Model<JournalEntryAttributes, JournalEntryCrea
     public content!: string;
     public userId!: number;
 
-    public readonly user?: User;  // how to make connection between journalEntry and user?
+    public readonly user?: User;  // maybe not needed???
     
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
