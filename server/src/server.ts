@@ -13,6 +13,8 @@ app.get('/', (req, res) => {
   res.send('Express + TypeScript Server');
 });
 
+// todo?: serve static files; app.use(express.json()); app.use(routes);
+
 // sync conntection to database
 sequelize.sync({force: forceDatabaseRefresh}).then(() => {
   app.listen(port, () => {
