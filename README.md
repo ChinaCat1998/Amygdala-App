@@ -13,6 +13,7 @@ Amygdala is a Mental Health Tracker application that helps users with managing t
 - [Installation](#installation)
 - [Usage](#usage)
 - [Questions](#questions)
+- [Credits](#credits)
 - [License](#license)
 
 ## Installation<a id="installation"></a>
@@ -35,12 +36,14 @@ If you want to get some advice on things to do to improve your mental health, cl
 
 If you are currently experiencing a crisis, there is a text/SMS link and a phone line (USA users only) to contact for mental health crisis services.
 
-## Contributing <a id="contributions"></a>
-
-
 ## Questions<a id="questions"></a>
 
 Please share any questions, comments or bugs in the <a href="https://github.com/ChinaCat1998/Amygdala-App/issues">Issues section</a> of the GitHub Repository/
+
+## Credits<a id="credits"></a>
+
+The Amygdala app was developed by <a href="https://github.com/ChinaCat1998">Cat</a>, <a href="#">Harleen</a>,
+<a href="https://github.com/Leo-webdev7">Leo</a>, <a href="#">Olyad</a>, <a href="https://github.com/PhilipMcF">Phil</a>, and <a href="https://github.com/sketchyTK">Tony</a>.
 
 ## License
 Please View https://github.com/ChinaCat1998/Amygdala-App?tab=MIT-1-ov-file for more information on this license.
