@@ -40,3 +40,53 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Header styles */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* NavMenu styles */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
