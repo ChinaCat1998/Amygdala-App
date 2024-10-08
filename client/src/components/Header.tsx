@@ -1,4 +1,4 @@
-/* import React from 'react'; */
+/*  */
 import logo from '../assets/logo/amygdala_logo.png'
 
 const Header = () => {
