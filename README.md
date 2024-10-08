@@ -1,8 +1,51 @@
 # Amygdala - Mental Health Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Currently, two official plugins are available:
+<img src="logo.jpg" alt="Amygdala Logo" width="100%" height="auto">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
+
+Amygdala is a Mental Health Tracker application that helps users with managing their mental health. Users can track their moods, journal their thoughts and feelings, and review past posts so they can see the progress they are making and reflect on previous life events. Also users can view helpful tips on improving their mental health.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Questions](#questions)
+- [License](#license)
+
+## Installation<a id="installation"></a>
+
+No installation required. Application is deployed on Render.
+
+## Usage<a id="usage"></a>
+
+If this is your first visit to Amygdala, click on the Signup link under the login form. Then create a username and password for your account.
+
+Once you have created an account, you can login.
+
+To create your first journal entry, click on the Journal Entry button.
+
+Select the Date, your current mood, and what is affecting your mood on the Journal Entry page. Then write down as much as you feel sharing about your day or an incident that occurred that affected your mood (it can be good or bad or neutral).
+
+To view old Journal Entries, click on the Calendar button. Select the date with the post you want to review.
+
+If you want to get some advice on things to do to improve your mental health, click on the Healthy Tips button.
+
+If you are currently experiencing a crisis, there is a text/SMS link and a phone line (USA users only) to contact for mental health crisis services.
+
+## Contributing <a id="contributions"></a>
+
+
+## Questions<a id="questions"></a>
+
+Please share any questions, comments or bugs in the <a href="https://github.com/ChinaCat1998/Amygdala-App/issues">Issues section</a> of the GitHub Repository/
+
+## License
+Please View https://github.com/ChinaCat1998/Amygdala-App?tab=MIT-1-ov-file for more information on this license.
+
+## Live Deployment
+
+<a href="https://www.loom.com/share/fb884c7221a449c9a0d3dcc46191db35?sid=f3ebd2e8-d371-47da-8e0a-3f0e00c056a8">Live Deployment on Render</a>
+
