@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import MentalHealthTips from '../components/Tips';
 import Footer from '../components/Footer';
 import Nav from '../components/Nav';

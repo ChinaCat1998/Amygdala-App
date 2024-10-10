@@ -224,6 +224,15 @@ nav button {
   color: white;
 }
 
+.homeButton {
+  background-color: #6cda8aab;
+  color: #0e215a;
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.57px;
+}
+
 .journalButton {
   background-color: #82C8C6AB;
   color: #CE335B;
