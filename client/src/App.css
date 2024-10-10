@@ -43,10 +43,10 @@ body{
 .signup-page {
   max-width: 400px;
   margin: auto;
-  padding: 20px;
+  padding: 50px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #6A1D67;
+  border-radius: 30px;
+  background-color: #4F86B6;
 }
 
 .signup-page h2 {
@@ -84,15 +84,26 @@ align-content: center;
 button:hover {
   background-color: #0056b3; 
 }
+.signup-page .button-container{
+ display: flex;
+ justify-content: center;
+
+}
+ .logo{
+  max-width: 70%;
+ 
+  display: block;
+  margin-bottom: 20px;
+}
 
 /*LoginPage.css */
 .login-page {
   max-width: 400px;
   margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #6A1D67;
+  padding: 50px;
+  border: 2px solid #533174;
+  border-radius: 30px;
+  background-color: #CD305D;
 }
 
 .login-page h2 {
@@ -129,6 +140,18 @@ align-content: center;
 button:hover {
   background-color: #0056b3; 
 }
+.login-page .button-container{
+  display: flex;
+  justify-content: center;
+  
+ }
+  .logo{
+   max-width: 70%;
+  
+   display: block;
+   margin-bottom: 20px;
+ }
+ 
 
 
 /* -       Welcome Page-------- */
@@ -212,8 +235,8 @@ footer {
 /* src/components/NavMenu.css */
 
 nav {
-  background-color: #007bff; /* Bootstrap primary color */
-  padding: 10px 20px; /* Padding for nav */
+  background-color: #533174; /* Bootstrap primary color */
+  padding: 20px 10px; /* Padding for nav */
 }
 
 nav ul {
@@ -252,20 +275,23 @@ nav button:hover {
 
 /* -       Footer Help Line -------- */
 
-.footer-wrap {
-  background: #D9D9D9;
-  color: #000;
-  font-weight: bold;
+.footer {
+ 
+  background: #533174;
+  width: 100%;
+  
   font-size: 20px;
   text-align: center;
+  
 }
 
-.footer-wrap a.text {
+
+.footer-reference a {
   color: #00A911;
   text-decoration: none;
 }
 
-.footer-wrap a.call {
+.footer-reference a.call {
   color: #002BC1;
   text-decoration: underline;
 }

@@ -14,15 +14,16 @@ const SignupPage = () => {
     localStorage.setItem(username, password);
     alert('Signup successful! You can now log in.');
     
-    // Clear input fields
+  
     setUsername('');
     setPassword('');
   };
 
   return (
+  
     <div className="signup-page">
-      <img src={logo} alt="Logo" className="logo" />
-      <h2>Signup</h2>
+      <img src={logo}  alt="Logo" className="logo" />
+      <h2>Welcome!!</h2>
       <form onSubmit={handleSignup}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -44,9 +45,12 @@ const SignupPage = () => {
             required
           />
         </div>
+        <div className='button-container'>
         <button type="submit">Signup</button>
+        </div>
       </form>
     </div>
+   
   );
 };
 

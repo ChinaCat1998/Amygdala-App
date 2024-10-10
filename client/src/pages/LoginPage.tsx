@@ -1,6 +1,8 @@
 // pages/LoginPage.js
 import { useState } from 'react';
+import logo from '../assets/logo/amygdala_logo.png';
 import '../App.css'; 
+
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -9,25 +11,27 @@ const LoginPage = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // Retrieve the password for the username from localStorage
+   
     const storedPassword = localStorage.getItem(username);
     
-    // Check if username exists and password matches
+  
     if (storedPassword && storedPassword === password) {
       alert('Login successfully!');
-      // Redirect to another page or perform any other action here
+    
     } else {
       alert("Username doesn't exist or password is incorrect");
     }
     
-    // Clear input fields
+ 
     setUsername('');
     setPassword('');
   };
 
   return (
     <div className="login-page">
-      <h2>Login</h2>
+     
+      <img src={logo}  alt="Logo" className="logo" />
+      <h2>Welcome Back!!</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -49,10 +53,13 @@ const LoginPage = () => {
             required
           />
         </div>
+        <div className='button-container'>
         <button type="submit">Login</button>
+        </div>
       </form>
     </div>
   );
 };
 
 export default LoginPage;
+
