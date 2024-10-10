@@ -4,6 +4,8 @@ import { User } from "./user";
 interface JournalEntryAttributes {
     id: number;
     title: string;
+    mood: string;
+    triggers: string[];
     content: string;
     userId: number;
 }
@@ -13,6 +15,8 @@ interface JournalEntryCreationAttributes extends Optional<JournalEntryAttributes
 export class JournalEntry extends Model<JournalEntryAttributes, JournalEntryCreationAttributes> implements JournalEntryAttributes {
     declare id: number;
     declare title: string;
+    declare mood: string;
+    declare triggers: string[];
     declare content: string;
     declare userId: number;
 
@@ -32,6 +36,14 @@ export function JournalEntryFactory(sequelize: Sequelize): typeof JournalEntry {
             },
             title: {
                 type: DataTypes.STRING,
+                allowNull: true, // true or false???
+            },
+            mood: {
+                type: DataTypes.STRING,
+                allowNull: false, 
+            },
+            triggers: {
+                type: DataTypes.ARRAY(DataTypes.STRING),
                 allowNull: true, // true or false???
             },
             content: {
