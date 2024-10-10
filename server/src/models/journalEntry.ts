@@ -6,6 +6,10 @@ interface JournalEntryAttributes {
     title: string;
     content: string;
     userId: number;
+    color: string;
+    mood: string;
+    anxiety: number;
+    sleep: number;
 }
 
 interface JournalEntryCreationAttributes extends Optional<JournalEntryAttributes, 'id'> {};
@@ -15,6 +19,10 @@ export class JournalEntry extends Model<JournalEntryAttributes, JournalEntryCrea
     public title!: string;
     public content!: string;
     public userId!: number;
+    public color!: string;
+    public mood!: string;
+    public anxiety!: number;
+    public sleep!: number;
 
     public readonly user?: User;  // maybe not needed???
     
@@ -45,6 +53,22 @@ export function JournalEntryFactory(sequelize: Sequelize): typeof JournalEntry {
                     model: User,
                     key: 'id',
                 }
+            },
+            color: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            mood: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            anxiety: {
+                type: DataTypes.NUMBER,
+                allowNull: true
+            },
+            sleep: {
+                type: DataTypes.NUMBER,
+                allowNull: true
             }
         },
         {

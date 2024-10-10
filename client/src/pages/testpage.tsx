@@ -1,8 +1,8 @@
 /* import React from "react"; */
 import '../App.css';
 /* import Footer from "../components/Footer"; */
-/* import Nav from "../components/Nav"; */
-import CalendarPage from './CalendarPage';
+import Nav from "../components/Nav";
+// import CalendarPage from './CalendarPage';
 /* import TipsPage from './TipsPage'; */
 /* import HomePage from './Home'; */
 
@@ -10,8 +10,10 @@ import CalendarPage from './CalendarPage';
 function TestPage () {
     return (
         <div className="App">
+            <Nav />
+            <div style={{ color: "black"}}>Journal Entry Page under construction.👷</div>
             {/* <HomePage /> */}
-            <CalendarPage />
+            {/* <CalendarPage /> */}
            {/*  <TipsPage /> */}
         </div>
     )

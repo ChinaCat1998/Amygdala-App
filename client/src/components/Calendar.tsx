@@ -1,6 +1,6 @@
 
 import '../App.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, isSameMonth, isSameDay, addMonths, subMonths } from 'date-fns';
 import arrowRight from '../assets/icons/arrowRight.svg';
 import arrowLeft from '../assets/icons/arrowLeft.svg'
