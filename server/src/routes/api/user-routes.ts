@@ -1,17 +1,23 @@
 import express from 'express';
-import type { Request, Response} from 'express';
-import { User } from '../../models/index.js';
+import {
+    getAllUsers, getUserById, createUser, updateUser, deleteUser,
+} from '../../controllers/user-controller';
 
-const router = express.Router();
+const userRouter = express.Router();
 
-// GET /feedback - Get all feedback
-router.get('/', async (_req: Request, res: Response) => {
-  try {
-    const users = await User.findAll();
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
+// GET /api/users - gets all users
+userRouter.get('/', getAllUsers);
 
-export { router as userRouter };
+// GET /api/users/:id - gets a single user by id
+userRouter.get('/:id', getUserById);
+
+// POST /api/users - creates a new user
+userRouter.post('/', createUser);
+
+// PUT /api/users/:id - updates a user by id
+userRouter.put('/:id', updateUser);
+
+// DELETE /api/users/:id - deletes a user by id
+userRouter.delete('/:id', deleteUser);
+
+export { userRouter };
