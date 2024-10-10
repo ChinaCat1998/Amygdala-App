@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-// import blush from '../assets/icons/blush.png';
+import blush from '../assets/icons/blush.png';
 import calendar from '../assets/icons/calendar.png';
-import tips from '../assets/icons/tips.png'
+import tips from '../assets/icons/tips.png';
+import home from '../assets/icons/home.png';
 
 
 const NavMenu = () => {
@@ -10,22 +11,22 @@ const NavMenu = () => {
       <ul>
         <li>
           <Link to='/Home'>
-            <button className="homeButton">Home</button>
+            <button className="homeButton">Home <img src={home} alt="home-img" className='nav-icon'/></button>
           </Link>
         </li>
         <li>
-          <Link to='/testpage'>
-            <button className="journalButton">Journal Entry</button>
+          <Link to='/JournalPage'>
+            <button className="journalButton">Journal Entry <img src={blush} alt="journal-img" className='nav-icon'/></button>
           </Link>
         </li>
         <li>
           <Link to='/CalendarPage'>
-            <button className="calendarButton">Calendar <img src={calendar} alt="calendar-img" className='calendar-img'/></button>
+            <button className="calendarButton">Calendar <img src={calendar} alt="calendar-img" className='nav-icon'/></button>
           </Link>
         </li>
         <li>
           <Link to='/TipsPage'>
-            <button className="tipsButton">Healthy Tips <img src={tips} alt="tips-img" className='tips-img'/></button>
+            <button className="tipsButton">Healthy Tips <img src={tips} alt="tips-img" className='nav-icon'/></button>
           </Link>
         </li>
       </ul>
