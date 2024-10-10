@@ -71,9 +71,9 @@ export const getJournalEntryById = async (req: Request, res: Response) => {
 
 // POST /api/journal-entries
 export const createJournalEntry = async (req: Request, res: Response) => {
-    const { title, content, userId } = req.body;
+    const { title, mood, triggers, content, userId } = req.body;
     try {
-        const newJournalEntry = await JournalEntry.create({ title, content, userId });
+        const newJournalEntry = await JournalEntry.create({ title, mood, triggers, content, userId });
         res.status(201).json(newJournalEntry);
     }
     catch (error: any) {
@@ -84,7 +84,7 @@ export const createJournalEntry = async (req: Request, res: Response) => {
 // PUT /api/journal-entries/:id
 export const updateJournalEntry = async (req: Request, res: Response) => {
     const { id } = req.params;
-    const { title, content, userId } = req.body;
+    const { title, mood, triggers, content, userId } = req.body;
     try {
         const journalEntry = await JournalEntry.findByPk(id);
         if (journalEntry) {
