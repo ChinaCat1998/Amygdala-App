@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import blush from '../assets/icons/blush.png';
+// import blush from '../assets/icons/blush.png';
 import calendar from '../assets/icons/calendar.png';
 import tips from '../assets/icons/tips.png'
 
@@ -10,19 +10,23 @@ const NavMenu = () => {
       <ul>
         <li>
           <Link to='/Home'>
-            Home
+            <button className="homeButton">Home</button>
           </Link>
         </li>
         <li>
           <Link to='/testpage'>
-            <button onClick={() => alert('Journal Entry clicked!')}>Journal Entry</button>
+            <button className="journalButton">Journal Entry</button>
           </Link>
         </li>
         <li>
-          <button className="calendarButton" onClick={() => alert('Calendar clicked!')}>Calendar <img src={calendar} alt="calendar-img" className='calendar-img'/></button>
+          <Link to='/CalendarPage'>
+            <button className="calendarButton">Calendar <img src={calendar} alt="calendar-img" className='calendar-img'/></button>
+          </Link>
         </li>
         <li>
-          <button className="tipsButton" onClick={() => alert('Healthy Tips clicked!')}>Healthy Tips <img src={tips} alt="tips-img" className='tips-img'/></button>
+          <Link to='/TipsPage'>
+            <button className="tipsButton">Healthy Tips <img src={tips} alt="tips-img" className='tips-img'/></button>
+          </Link>
         </li>
       </ul>
     </nav>

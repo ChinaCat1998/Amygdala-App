@@ -12,9 +12,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // import Calandar from './pages/Calendar.tsx';
 // import HealthyTips from './pages/HealthyTips.tsx';
 
-import ErrorPage from './pages/ErrorPage.tsx';
-import TestPage from './pages/testpage.tsx';
+// import ErrorPage from './pages/ErrorPage.tsx'
+// import TestPage from './pages/testpage.tsx'
 import Home from './pages/Home.tsx'
+import CalendarPage from './pages/CalendarPage.tsx'
+import TipsPage from './pages/TipsPage.tsx'
+import TestPage from './pages/testpage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -27,13 +30,20 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/ErrorPage',
+        path: '/CalendarPage',
         index: true,
-        element: <ErrorPage />,
+        element: <CalendarPage />,
       },
       {
+        path: '/tipspage',
+        index: true,
+        element: <TipsPage />,
+      },
+      // placeholder, will replace with route to journalentry
+      {
         path: '/testpage',
-        element: <TestPage />,
+        index: true,
+        element: <TestPage />
       }
     ],
   },

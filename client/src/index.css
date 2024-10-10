@@ -35,13 +35,6 @@ h1 {
   line-height: 1.1;
 }
 
-nav {
-  display: block;
-  position: sticky;
-  top: 0;
-  background-color: red;
-  color: orange;
-}
 
 button {
   border-radius: 8px;
