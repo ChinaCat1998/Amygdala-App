@@ -12,20 +12,12 @@ const sequelize = process.env.DB_URL
         {
             host: 'localhost',
             dialect: 'postgres',
-            schema: 'amygdalaDB',
+            schema: 'amygdala_db',
             dialectOptions: {
                 decimalNumbers: true,
             },
         }
         );
 
-// Create schema if it doesn't exist 
-sequelize.query('CREATE SCHEMA IF NOT EXISTS amygdalaDB;')
-    .then(() => {
-        console.log('amygdalaDB schema created or already exists');
-    })
-    .catch(err => {
-        console.error('Error creating schema:', err);
-    });
 
 export default sequelize;

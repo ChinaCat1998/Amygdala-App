@@ -6,6 +6,7 @@ const User = UserFactory(sequelize)
 const JournalEntry = JournalEntryFactory(sequelize)
 
 User.hasMany(JournalEntry, { foreignKey: 'userId' });
-JournalEntry.belongsTo(User, { foreignKey: 'userId' });
+JournalEntry.belongsTo(User, { foreignKey: 'userId', as: 'user' });
 
-export { User, JournalEntry };
+export { sequelize, User, JournalEntry };
+

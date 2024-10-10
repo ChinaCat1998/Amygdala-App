@@ -13,6 +13,7 @@
   padding: 0;
   margin: 0 auto;
 }
+
 html,
 body,
 .wrapper {
@@ -22,8 +23,12 @@ body,
   padding: 0;
 }
 
-body{
+body {
   margin: 0 auto;
+  padding: 0;
+  font-size: 16px;
+  background-color:#ffffff;
+  font-family: Inter, sans-serif;
   padding: 0;
   font-size: 16px;
   background-color:#ffffff;
@@ -31,6 +36,16 @@ body{
 }
 
 .logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  text-align:center;
+}
+
+/* -       Login Page & Signup Page-------- */
+
+.login-page {
+  background: linear-gradient(357.09deg, #DD64D8 -3.04%, #FFFFFF 30.85%, #FFFFFF 75.09%);
   max-width: 100%;
   height: auto;
   display: block;
@@ -207,11 +222,15 @@ button:hover {
   background: #9C0A6A8A;
 }
 
+.button-wrap.healthy-tips a {
+  color: #000;
+}
+
 /* Header styles */
 header {
   text-align: center;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color:#ffffff;
 }
 
 header img {
@@ -220,15 +239,48 @@ header img {
   margin-bottom: 20px;
 }
 
+h1 {
+  font-family: Inter;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 77.45px;
+  color: #6A1D67;
+}
+
+p {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  color: #CF365A;
+}
+
 /* Footer styles */
 footer {
-  background-color: #f0f0f0;
+  display: flex;
+  background-color: #D9D9D9;
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ccc;
-  position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.footer-text {
+  font-family: Inter;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24.2px;
+}
+
+.footer-call {
+  color: #00A911;
+}
+
+.footer-link {
+  color: #002BC1;
+  text-decoration: underline;
 }
 
 /* NavMenu styles */
@@ -262,16 +314,70 @@ nav a:hover {
 }
 
 nav button {
-  background-color: transparent; /* Transparent background */
-  border: none; /* Remove border */
-  color: white; /* Text color */
-  cursor: pointer; /* Pointer cursor */
-  font-size: 16px; /* Font size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 324px;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: white;
 }
 
 nav button:hover {
-  color: #ffd700; /* Change color on hover */
+  transform: scale(1.07);
+  transition: transform 0.2s;
 }
+
+.homeButton {
+  background-color: #6cda8aab;
+  color: #0e215a;
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.57px;
+}
+
+.journalButton {
+  background-color: #82C8C6AB;
+  color: #CE335B;
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.57px;
+}
+
+.calendarButton {
+  background-color: #ECB537B5;
+  color: #5C00AA;
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.57px;
+}
+
+.tipsButton {
+  background-color: #9C0A6A8A;
+  color: black;
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.57px;
+}
+
+.button-wrap.healthy-tips a {
+  color: #000;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+}
+
 
 /* -       Footer Help Line -------- */
 
@@ -296,10 +402,12 @@ nav button:hover {
   text-decoration: underline;
 }
 
+/* --------- Journal Page ----------- */
+
 .journal-page h1 /* How Are You?*/ {
   color: #6A1D67;
   font-size: 24px;
-}
+} 
 
 .journal-page .mood-wrap {
   max-width: 480px;
@@ -352,4 +460,233 @@ nav button:hover {
 .journal-page input[type=submit] {
   width: 125px;
   text-transform: uppercase;
+}
+
+/* Calendar.css */
+
+.calendar {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+
+.icon {
+  margin: auto;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.days {
+  display: flex;
+  background-color: #959393;
+  border-bottom: 1px solid #ccc;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.col-center {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.col-month {
+  color: #000;
+}
+
+.cell {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+}
+
+.cell.disabled {
+  color: #090202;
+}
+
+.cell.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+.number {
+  color: black;
+  position: relative;
+  z-index: 2;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 90%;
+  height: 90%; */
+  z-index: 1;
+}
+ 
+/* MentalHealthTips */
+
+.mental-health-tips {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mental-health-tips h2 {
+  text-align: center;
+  color: #4CAF50;
+}
+
+.mental-health-tips ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mental-health-tips li {
+  color: #000;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* JournalEntry */
+
+.journal-entry {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.journal-calendar-text {
+  font-size: 1.2em;
+  line-height: 1.1;
+  margin: 10px;
+} 
+
+.mood-emojis {
+  display: flex;
+}
+
+.mood-select span {
+  font-size: 2em;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.mood-select:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
+
+.mood-description {
+  color: #000;
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+
+.journal-whats-affecting-text {
+  color: #000;
+}
+
+.mood-triggers {
+  margin: 20px 0;
+}
+
+.mood-triggers h2 {
+  margin-bottom: 10px;
+}
+
+.triggers-list {
+  max-width: 347px;
+  display: flex;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.trigger {
+  color: #002BC1;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+input {
+  color: #000;
+  padding: 10px;
+  width: calc(100% - 22px);
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.triggerButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.triggerButton:hover {
+  background-color: #373b85;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #373b85;
+}
+
+.situation-description textarea {
+  color: #000;
+  width: calc(100% - 22px);
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
