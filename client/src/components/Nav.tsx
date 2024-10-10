@@ -1,11 +1,12 @@
-// import React from 'react';
+
 
 const NavMenu = () => {
   return (
     <nav>
       <ul>
         <li>
-          <button onClick={() => alert('Journal Entry clicked!')}>Journal Entry</button>
+          <Link to="/testpage"></Link>
+          {/* <button onClick={() => alert('Journal Entry clicked!')}>Journal Entry</button> */}
         </li>
         <li>
           <button onClick={() => alert('Calendar clicked!')}>Calendar</button>

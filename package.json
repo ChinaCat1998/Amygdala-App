@@ -1,0 +1,17 @@
+{
+  "name": "amygdala-app",
+  "version": "1.0.0",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "scripts": {
+    "install": "npm install && npm --prefix ./client install && npm --prefix ./server install",
+    "build": "npm  --prefix ./client run build && npm --prefix ./server run build",
+    "start": "npm --prefix ./server run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
