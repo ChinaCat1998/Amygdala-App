@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-<img src="./client/src/assets/logo/amygdala_logo.png" alt="Amygdala Logo" style="max-width:300px; height:auto; display: block; margin: 0 auto;">
+<img src="./client/src/assets/logo/amygdala_logo.png" alt="Amygdala Logo" style="max-width:200px; height:auto; display: block; margin: 0 auto;">
 
 ## Description
 
