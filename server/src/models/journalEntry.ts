@@ -4,30 +4,26 @@ import { User } from "./user";
 interface JournalEntryAttributes {
     id: number;
     title: string;
+    mood: string;
+    triggers: string[];
     content: string;
     userId: number;
-    color: string;
-    mood: string;
-    anxiety: number;
-    sleep: number;
 }
 
 interface JournalEntryCreationAttributes extends Optional<JournalEntryAttributes, 'id'> {};
 
 export class JournalEntry extends Model<JournalEntryAttributes, JournalEntryCreationAttributes> implements JournalEntryAttributes {
-    public id!: number;
-    public title!: string;
-    public content!: string;
-    public userId!: number;
-    public color!: string;
-    public mood!: string;
-    public anxiety!: number;
-    public sleep!: number;
+    declare id: number;
+    declare title: string;
+    declare mood: string;
+    declare triggers: string[];
+    declare content: string;
+    declare userId: number;
 
-    public readonly user?: User;  // maybe not needed???
+    declare readonly user?: User;  // maybe not needed???
     
-    public readonly createdAt!: Date;
-    public readonly updatedAt!: Date;
+    declare readonly createdAt: Date;
+    declare readonly updatedAt: Date;
 }
 
 export function JournalEntryFactory(sequelize: Sequelize): typeof JournalEntry {
@@ -42,6 +38,14 @@ export function JournalEntryFactory(sequelize: Sequelize): typeof JournalEntry {
                 type: DataTypes.STRING,
                 allowNull: true, // true or false???
             },
+            mood: {
+                type: DataTypes.STRING,
+                allowNull: false, 
+            },
+            triggers: {
+                type: DataTypes.ARRAY(DataTypes.STRING),
+                allowNull: true, // true or false???
+            },
             content: {
                 type: DataTypes.STRING,
                 allowNull: true, // true or false???
@@ -53,25 +57,10 @@ export function JournalEntryFactory(sequelize: Sequelize): typeof JournalEntry {
                     model: User,
                     key: 'id',
                 }
-            },
-            color: {
-                type: DataTypes.STRING,
-                allowNull: true
-            },
-            mood: {
-                type: DataTypes.STRING,
-                allowNull: true
-            },
-            anxiety: {
-                type: DataTypes.NUMBER,
-                allowNull: true
-            },
-            sleep: {
-                type: DataTypes.NUMBER,
-                allowNull: true
             }
         },
         {
+            schema: 'amygdala_db',
             tableName: 'journalEntries', // maybe change this?
             sequelize,
         }
