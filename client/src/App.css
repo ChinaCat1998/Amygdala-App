@@ -224,6 +224,11 @@ nav button {
   color: white;
 }
 
+nav button:hover {
+  transform: scale(1.07);
+  transition: transform 0.2s;
+}
+
 .homeButton {
   background-color: #6cda8aab;
   color: #0e215a;
@@ -264,23 +269,12 @@ nav button {
   color: #000;
 }
 
-.blush-img {
+.nav-icon {
   margin-right: 10px;
   width: 40px;
   height: 40px;
 }
 
-.calendar-img {
-  margin-right: 10px;
-  width: 40px;
-  height: 40px;
-}
-
-.tips-img {
-  margin-right: 10px;
-  width: 40px;
-  height: 40px;
-}
 
 /* -       Footer Help Line -------- */
 
