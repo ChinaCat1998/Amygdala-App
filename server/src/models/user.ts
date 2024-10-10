@@ -10,12 +10,12 @@ interface UserAttributes {
 interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 
 export class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
-    public id!: number;
-    public username!: string;
-    public password!: string;
+    declare id: number;
+    declare username: string;
+    declare password: string;
 
-    public readonly createdAt!: Date;
-    public readonly updatedAt!: Date;
+    declare readonly createdAt: Date;
+    declare readonly updatedAt: Date;
 
     // Hash the password before saving the user
     public async setPassword(password: string) {
@@ -42,6 +42,7 @@ export function UserFactory(sequelize: Sequelize): typeof User {
             },
             },
             {
+            schema: 'amygdala_db',
             tableName: 'users',
             sequelize,
             hooks: {
