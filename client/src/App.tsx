@@ -1,16 +1,22 @@
 /* import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg' */
+import {Outlet} from "react-router-dom"
 import './App.css'
-import TestPage from './pages/testpage';
+// import Nav from './components/Nav'
+// import TestPage from './pages/testpage';
 
 function App() {
 
   return (
     <>
-      <TestPage />
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }
 
 export default App
+
+
