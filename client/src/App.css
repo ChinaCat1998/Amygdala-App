@@ -39,53 +39,97 @@ body{
 
 /* -       Login Page & Signup Page-------- */
 
-.login-page {
-  background: linear-gradient(357.09deg, #DD64D8 -3.04%, #FFFFFF 30.85%, #FFFFFF 75.09%);
-}
-
+/* SignUpPage.css */
 .signup-page {
-  background: linear-gradient(180deg, #FFFFFF 70.5%, #FB86A4 100%);
-}
-
-.login-wrap, .signup-wrap {
-  max-width: 420px;
-  background: #CD305D;
+  max-width: 400px;
+  margin: auto;
   padding: 20px;
-  border-radius: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #6A1D67;
+}
+
+.signup-page h2 {
+  text-align: center;
+}
+
+.signup-page div {
+  margin-bottom: 15px;
+}
+
+.signup-page label {
   display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+
 }
 
-.signup-wrap {
- background: #4F86B6;
-}
-
-.login-wrap input, .signup-wrap input {
-  border-radius: 10px;
-  color: #000;
+.signup-page input {
   width: 100%;
-  margin-bottom: .5em;
-  background: #fff;
-  padding: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+  background: #000000;
+
+}
+  
+
+.signup-page .error {
+  color: red;
+  font-size: 0.9em;
+}
+.signup-page button{
+  background-color: #00A911;
+align-content: center;
+}
+button:hover {
+  background-color: #0056b3; 
 }
 
-.login-wrap input[type=submit], .signup-wrap input[type=submit] {
-  width: 125px;
-  text-transform: uppercase;
+/*LoginPage.css */
+.login-page {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #6A1D67;
 }
 
-.login-wrap a {
-  color: #fff;
-  text-decoration: none;
+.login-page h2 {
+  text-align: center;
 }
 
-.login-wrap a.signup {
-  font-size: 20px;
-  font-weight: 600;
+.login-page div {
+  margin-bottom: 15px;
 }
 
-.card {
-  padding: 2em;
+.login-page label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+
 }
+
+.login-page input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  background: black;
+}
+
+.login-page .error {
+  color: red;
+  font-size: 0.9em;
+}
+.login-page button{
+  background-color: #00A911;
+align-content: center;
+}
+
+button:hover {
+  background-color: #0056b3; 
+}
+
 
 /* -       Welcome Page-------- */
 
@@ -165,33 +209,45 @@ footer {
 }
 
 /* NavMenu styles */
+/* src/components/NavMenu.css */
+
+nav {
+  background-color: #007bff; /* Bootstrap primary color */
+  padding: 10px 20px; /* Padding for nav */
+}
+
 nav ul {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
+  list-style: none; /* Remove bullet points */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  display: flex; /* Use flexbox for horizontal layout */
 }
 
 nav li {
-  margin: 0 10px;
+  margin-right: 20px; /* Space between items */
+}
+
+nav a {
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+nav a:hover {
+  color: #ffd700; /* Gold color on hover */
 }
 
 nav button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove border */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 16px; /* Font size */
 }
 
-
-
-.button-wrap.healthy-tips a {
-  color: #000;
+nav button:hover {
+  color: #ffd700; /* Change color on hover */
 }
 
 /* -       Footer Help Line -------- */

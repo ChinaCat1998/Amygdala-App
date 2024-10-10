@@ -1,18 +1,40 @@
-
+import { Link } from 'react-router-dom';
 
 const NavMenu = () => {
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true'; // Check local storage for login status
+
+  const handleLogout = () => {
+    localStorage.removeItem('loggedIn'); // Remove login status from local storage
+    alert('Logged out successfully!');
+    window.location.href = '/'; // Redirect to home page after logout
+  };
+
   return (
     <nav>
       <ul>
         <li>
-          <button onClick={() => alert('Journal Entry clicked!')}>Journal Entry</button>
+          <Link to="/">Journal Entry</Link>
         </li>
         <li>
-          <button onClick={() => alert('Calendar clicked!')}>Calendar</button>
+          <Link to="/calendar">Calendar</Link>
         </li>
         <li>
-          <button onClick={() => alert('Healthy Tips clicked!')}>Healthy Tips</button>
+          <Link to="/healthy-tips">Healthy Tips</Link>
         </li>
+        {!isLoggedIn ? (
+          <>
+            <li>
+              <Link to="../SignUpPage">SignUp</Link>
+            </li>
+            <li>
+              <Link to="./LoginPage">Login</Link>
+            </li>
+          </>
+        ) : (
+          <li>
+            <button onClick={handleLogout}>Logout</button>
+          </li>
+        )}
       </ul>
     </nav>
   );
