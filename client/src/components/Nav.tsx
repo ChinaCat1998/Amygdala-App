@@ -1,12 +1,18 @@
-
+import { Link } from 'react-router-dom'
 
 const NavMenu = () => {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/testpage"></Link>
-          {/* <button onClick={() => alert('Journal Entry clicked!')}>Journal Entry</button> */}
+          <Link to='/Home'>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to='/testpage'>
+            <button onClick={() => alert('Journal Entry clicked!')}>Journal Entry</button>
+          </Link>
         </li>
         <li>
           <button onClick={() => alert('Calendar clicked!')}>Calendar</button>

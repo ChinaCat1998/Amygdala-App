@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg' */
 import {Outlet} from "react-router-dom"
 import './App.css'
 import Nav from './components/Nav'
-import TestPage from './pages/testpage';
+// import TestPage from './pages/testpage';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
       <main>
         <Outlet />
       </main>
-      <TestPage />
+      {/* <TestPage /> */}
     </>
   )
 }
