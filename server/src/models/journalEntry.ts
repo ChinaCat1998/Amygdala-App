@@ -11,15 +11,15 @@ interface JournalEntryAttributes {
 interface JournalEntryCreationAttributes extends Optional<JournalEntryAttributes, 'id'> {};
 
 export class JournalEntry extends Model<JournalEntryAttributes, JournalEntryCreationAttributes> implements JournalEntryAttributes {
-    public id!: number;
-    public title!: string;
-    public content!: string;
-    public userId!: number;
+    declare id: number;
+    declare title: string;
+    declare content: string;
+    declare userId: number;
 
-    public readonly user?: User;  // maybe not needed???
+    declare readonly user?: User;  // maybe not needed???
     
-    public readonly createdAt!: Date;
-    public readonly updatedAt!: Date;
+    declare readonly createdAt: Date;
+    declare readonly updatedAt: Date;
 }
 
 export function JournalEntryFactory(sequelize: Sequelize): typeof JournalEntry {
@@ -48,6 +48,7 @@ export function JournalEntryFactory(sequelize: Sequelize): typeof JournalEntry {
             }
         },
         {
+            schema: 'amygdala_db',
             tableName: 'journalEntries', // maybe change this?
             sequelize,
         }
