@@ -43,7 +43,7 @@ Please share any questions, comments or bugs in the <a href="https://github.com/
 ## Credits<a id="credits"></a>
 
 The Amygdala app was developed by <a href="https://github.com/ChinaCat1998">Cat</a>, <a href="#">Harleen</a>,
-<a href="https://github.com/Leo-webdev7">Leo</a>, <a href="#">Olyad</a>, <a href="https://github.com/PhilipMcF">Phil</a>, and <a href="https://github.com/sketchyTK">Tony</a>.
+<a href="https://github.com/Leo-webdev7">Leo</a>, <a href="https://github.com/thymetime">Olyad</a>, <a href="https://github.com/PhilipMcF">Phil</a>, and <a href="https://github.com/sketchyTK">Tony</a>.
 
 ## License
 Please View <a href="https://github.com/ChinaCat1998/Amygdala-App?tab=MIT-1-ov-file">MIT License</a> for more information on this license.
