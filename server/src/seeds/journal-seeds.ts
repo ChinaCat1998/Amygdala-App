@@ -1,4 +1,4 @@
-import { JournalEntry } from '../models/index.js';
+/* import { JournalEntry } from '../models/index.js';
 
 export const seedTips = async () => {
   await JournalEntry.bulkCreate([
@@ -39,4 +39,4 @@ export const seedTips = async () => {
     content: 'Had a difficult day at work today.'
     }
   ]);
-};
+}; */
