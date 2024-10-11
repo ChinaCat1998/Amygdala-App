@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
 
 import Nav from './components/Nav'
 import TestPage from './pages/testpage';
@@ -14,17 +14,12 @@ import './App.css';
 function App() {
 
   return (
-    <Router>
-     <Nav/>
-      <Routes>
-      <Route path='/' element={<TestPage/>} />
-      <Route path='/SignUpPage' element={<SignUpPage />} />
-      <Route path='/LoginPage' element={<LoginPage />} />
-      </Routes>
-      
-   <Footer/>
-    </Router>
-  );
+    <>
+      <main>
+      <Outlet/>
+      </main>
+    </>
+  )
 }
 
 export default App;

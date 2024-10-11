@@ -5,7 +5,8 @@ const JournalEntry = () => {
   const [mood, setMood] = useState('');
   const [triggers, setTriggers] = useState<string[]>([]);
   const [newTrigger, setNewTrigger] = useState<string>('');
-  const [description, setDescription] = useState<string>('');
+  const [content, setDescription] = useState<string>('');
+  const userId = 1;
 
   const handleAddTrigger = () => {
     if (newTrigger && !triggers.includes(newTrigger)) {
@@ -14,18 +15,19 @@ const JournalEntry = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const journalData = {
     date: new Date().toDateString(),
+    userId,
     mood,
     triggers,
-    description
+    content
     };
     /* console.log('Journal Entry Data:', journalData); */
     // Here you can send the data to your server or handle it as needed
     try {
-      const response = await fetch('/createJournalEntry', {
+      const response = await fetch('/api/journal-entries', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -46,7 +48,7 @@ const JournalEntry = () => {
     }
   };
 
-  }
+  
 
   return (
     <div className='journal-entry'>
@@ -73,11 +75,11 @@ const JournalEntry = () => {
           onChange={(e) => setNewTrigger(e.target.value)} 
           placeholder="Add a trigger (e.g., traffic)" 
         />
-        <button className='triggerButton' onClick={handleAddTrigger}>Add Trigger</button>
+        <button type='button' className='triggerButton' onClick={handleAddTrigger}>Add Trigger</button>
       </div>
       <div className="situation-description">
         <textarea 
-          value={description} 
+          value={content} 
           onChange={(e) => setDescription(e.target.value)} 
           placeholder="Describe the situation that triggered you" 
         />
@@ -87,6 +89,6 @@ const JournalEntry = () => {
     </div>
     
   );
-};
+}
 
 export default JournalEntry;
