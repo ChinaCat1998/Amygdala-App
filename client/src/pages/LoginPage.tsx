@@ -32,7 +32,7 @@ const LoginPage = () => {
      
       <img src={logo}  alt="Logo" className="logo" />
       <h2>Welcome Back!!</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-wrap">
         <div>
           <label htmlFor="username">Username:</label>
           <input
@@ -56,6 +56,7 @@ const LoginPage = () => {
         <div className='button-container'>
         <button type="submit">Login</button>
         </div>
+        <a href="#" className='signup'>Sign Up</a>
       </form>
     </div>
   );

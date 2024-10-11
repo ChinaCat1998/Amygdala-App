@@ -40,6 +40,7 @@ body {
   height: auto;
   display: block;
   text-align:center;
+  margin-bottom: 20px;
 }
 
 /* -       Login Page & Signup Page-------- */
@@ -52,9 +53,46 @@ body {
   text-align:center;
 }
 
-/* -       Login Page & Signup Page-------- */
+.signup-page {
+  background: linear-gradient(180deg, #FFFFFF 70.5%, #FB86A4 100%);
+}
 
-/* SignUpPage.css */
+.login-wrap, .signup-wrap {
+  max-width: 420px;
+  background: #CD305D;
+  padding: 20px;
+  border-radius: 25px;
+  display: block;
+}
+.signup-wrap {
+ background: #4F86B6;
+}
+.login-wrap input, .signup-wrap input {
+  border-radius: 10px;
+  color: #000;
+  width: 100%;
+  margin-bottom: .5em;
+  background: #fff;
+  padding: 10px;
+}
+.login-wrap input[type=submit], .signup-wrap input[type=submit] {
+  width: 125px;
+  text-transform: uppercase;
+}
+/*-------  forgot passowrd & sign up links */
+.login-wrap a {
+  color: #fff;
+  text-decoration: none;
+}
+.login-wrap a.signup {
+  font-size: 20px;
+  font-weight: 600;
+}
+.signup-wrap {
+ background: #4F86B6;
+}
+
+/* SignUpPage.css
 .signup-page {
   max-width: 400px;
   margin: auto;
@@ -104,14 +142,8 @@ button:hover {
  justify-content: center;
 
 }
- .logo{
-  max-width: 70%;
- 
-  display: block;
-  margin-bottom: 20px;
-}
-
-/*LoginPage.css */
+ */
+/*LoginPage.css 
 .login-page {
   max-width: 400px;
   margin: auto;
@@ -140,7 +172,7 @@ button:hover {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  background: black;
+  background: rgb(255, 255, 255);
 }
 
 .login-page .error {
@@ -166,8 +198,7 @@ button:hover {
    display: block;
    margin-bottom: 20px;
  }
- 
-
+ */
 
 /* -       Welcome Page-------- */
 

@@ -24,7 +24,7 @@ const SignupPage = () => {
     <div className="signup-page">
       <img src={logo}  alt="Logo" className="logo" />
       <h2>Welcome!!</h2>
-      <form onSubmit={handleSignup}>
+      <form onSubmit={handleSignup} className="signup-wrap">
         <div>
           <label htmlFor="username">Username:</label>
           <input
