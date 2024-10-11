@@ -5,7 +5,7 @@ export const seedTips = async () => {
     {
     title: 'Work is hard',
     userId: 2,
-    color: 'Red',
+    // color: 'Red',
     mood: 'Frustrated',
     anxiety: 3,
     sleep: 5,
