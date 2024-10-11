@@ -66,7 +66,7 @@ const Calendar = () => {
         days.push(
           <div
             className={`col cell ${!isSameMonth(day, monthStart) ? "disabled" : isSameDay(day, selectedDate) ? "selected" : ""}`}
-            key={day}
+            key={i}
             onClick={() => setSelectedDate(cloneDay)}
           >
             <span className="number">{formattedDate}</span>
@@ -76,7 +76,7 @@ const Calendar = () => {
         day = addDays(day, 1);
       }
       rows.push(
-        <div className="row" key={day}>
+        <div className="row">
           {days}
         </div>
       );
