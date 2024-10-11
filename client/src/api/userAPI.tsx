@@ -1,4 +1,4 @@
-import auth from '../utils/auth'; // may not be needed
+// import auth from '../utils/auth'; // may not be needed
 import { UserData } from '../interfaces/UserData';
 
 // should be the only function we need as username, userId can be grabbed later if needed from token payload
