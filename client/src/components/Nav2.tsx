@@ -5,15 +5,15 @@ const NavMenu = () => {
     <nav className='updated-nav-tk'>
       <ul>
         <li>
-          <Link to='/JournalPage'>
+          <Link to='/JournalPage'>Journal
           </Link>
         </li>
         <li>
-          <Link to='/CalendarPage'>
+          <Link to='/CalendarPage'>Calendar
           </Link>
         </li>
         <li>
-          <Link to='/TipsPage'>
+          <Link to='/TipsPage'>Tips
           </Link>
         </li>
       </ul>

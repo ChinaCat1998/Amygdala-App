@@ -1,6 +1,6 @@
 // pages/SignupPage.js
 import { useState } from 'react';
-import logo from '../assets/logo/amygdala_logo-crop.png';
+import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
 
 const SignupPage = () => {

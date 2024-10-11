@@ -9,14 +9,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  color: rgb(255, 255, 255);
+  color: #000;
   padding: 0;
   margin: 0 auto;
 }
 
-html,
-body,
-.wrapper, #root, main {
+html, body,
+.wrapper, #root, .App, main {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -41,15 +40,33 @@ body {
 
 nav.updated-nav-tk {
   background: #fff;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 0;
+}
+
+nav.updated-nav-tk ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+nav.updated-nav-tk li {
+  display: inline-block;
 }
 
 nav.updated-nav-tk a {
-  color: #000;
+  color: #681e67; 
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 15px;
 }
 
 nav.updated-nav-tk a:hover {
-  color: #000;
-  background: #ff0;
+  color: #681e67;
+  background: #abdad9;
 }
 
 /* -       Login Page & Signup Page-------- */
@@ -220,9 +237,10 @@ button:hover {
 /* -       Welcome Page-------- */
 
 .welcome-wrap h1 {
-   font-size: 64px;
+   font-size: 3em;
    font-weight: 900;
    color: #6A1D67;
+   text-align:center;
 }
 
 .welcome-wrap h2 {
@@ -231,8 +249,9 @@ button:hover {
    color: #CF365A;
    font-size: 20px;
    font-weight: 400;
+   text-align:center;
 }
-
+/*
 .button-wrap {
   width: 380px;
   padding: 20px;
@@ -273,7 +292,7 @@ button:hover {
 .button-wrap.healthy-tips a {
   color: #000;
 }
-
+*/
 /* Header styles */
 header {
   text-align: center;
@@ -281,9 +300,16 @@ header {
   background-color:#ffffff;
 }
 
+header a.login-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1em;
+}
+
 header img {
-  width: 100px;
-  height: 100px;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -300,7 +326,6 @@ p {
   font-size: 20px;
   font-weight: 400;
   line-height: 24.2px;
-  color: #CF365A;
 }
 
 /* Footer styles */
@@ -335,8 +360,10 @@ footer {
 /* src/components/NavMenu.css */
 
 nav {
-  background-color: #533174; /* Bootstrap primary color */
+ /*  background-color: #533174; Bootstrap primary color */
   padding: 20px 10px; /* Padding for nav */
+  width: 100%;
+  max-width: 480px;
 }
 
 nav ul {
@@ -344,12 +371,13 @@ nav ul {
   margin: 0; /* Reset margin */
   padding: 0; /* Reset padding */
   display: flex; /* Use flexbox for horizontal layout */
+  flex-direction: column;
 }
-
+/* 
 nav li {
-  margin-right: 20px; /* Space between items */
+ margin-right: 20px;  Space between items 
 }
-
+*/
 nav a {
   color: white; /* Text color */
   text-decoration: none; /* Remove underline */
@@ -430,18 +458,15 @@ nav button:hover {
 /* -       Footer Help Line -------- */
 
 .footer {
- 
-  background: #533174;
+  background: #d9d9d9;
   width: 100%;
-  
   font-size: 20px;
   text-align: center;
-  
+ 
 }
 
-
 .footer-reference a {
-  color: #00A911;
+  color: #649460;
   text-decoration: none;
 }
 
@@ -515,7 +540,7 @@ nav button:hover {
 .calendar {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 
 .calendar-header {
@@ -737,4 +762,13 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 420) {
+  nav button {
+    max-width: 280px;
+  }
+  .journalButton, .tipsButton {
+    font-size: 1.75em;
+  }
 }

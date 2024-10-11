@@ -1,6 +1,6 @@
 // pages/LoginPage.js
 import { useState } from 'react';
-import logo from '../assets/logo/amygdala_logo-crop.png';
+import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
 
 
