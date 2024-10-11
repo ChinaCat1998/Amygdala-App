@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 
 interface JwtPayload {
     username: string;
+    userId: number; // used in journal-entry-controller ; signed in user's id from JWT payload is used to do its routes
 }
 
 interface AuthenticatedRequest extends Request {
