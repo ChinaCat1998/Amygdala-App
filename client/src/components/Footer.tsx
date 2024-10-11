@@ -2,8 +2,8 @@
 
 const Footer = () => {
   return (
-    <footer>
-      <p className="footer-text">Call or text <strong className="footer-call">988</strong> or chat <a className="footer-link" href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">988lifeline.org</a></p>
+    <footer className="footer">
+      <p className="footer-reference">Call or text <strong>988</strong> chat <a href="https://988lifeline.org" target="_blank" rel="noopener noreferrer">988lifeline.org</a></p>
     </footer>
   );
 };

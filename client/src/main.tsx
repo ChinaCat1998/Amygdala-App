@@ -17,13 +17,17 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home.tsx'
 import CalendarPage from './pages/CalendarPage.tsx'
 import TipsPage from './pages/TipsPage.tsx'
-import TestPage from './pages/testpage.tsx'
+import JournalPage from './pages/JournalPage.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+      {
+        index: true,
+        element: <Home />
+      },
       {
         path: '/Home',
         index: true,
@@ -41,9 +45,9 @@ const router = createBrowserRouter([
       },
       // placeholder, will replace with route to journalentry
       {
-        path: '/testpage',
+        path: '/JournalPage',
         index: true,
-        element: <TestPage />
+        element: <JournalPage />
       }
     ],
   },
