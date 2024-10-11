@@ -18,6 +18,8 @@ import Home from './pages/Home.tsx'
 import CalendarPage from './pages/CalendarPage.tsx'
 import TipsPage from './pages/TipsPage.tsx'
 import JournalPage from './pages/JournalPage.tsx';
+import SignupPage from './pages/SignUpPage.tsx';
+import LoginPage from './pages/LoginPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: '/SignUpPage',
+        index: true,
+        element: <SignupPage />
+      },
+      {
+        path: '/LoginPage',
+        index: true,
+        element: <LoginPage />
       },
       {
         path: '/Home',

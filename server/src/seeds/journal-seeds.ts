@@ -1,4 +1,4 @@
-/* import { JournalEntry } from '../models/index.js';
+import { JournalEntry } from '../models/index.js';
 
 export const seedJournalEntries = async () => {
   await JournalEntry.bulkCreate([
@@ -31,4 +31,4 @@ export const seedJournalEntries = async () => {
     triggers: ['Life']
     },
   ]);
-}; */
+}; 
