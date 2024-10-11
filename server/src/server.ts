@@ -36,4 +36,3 @@ sequelize.query('CREATE SCHEMA IF NOT EXISTS amygdala_db;')
     .catch((err) => {
         console.error('Error creating schema or syncing database:', err);
     });
-

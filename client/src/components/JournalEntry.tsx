@@ -14,7 +14,7 @@ const JournalEntry = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const journalData = {
     date: new Date().toDateString(),
@@ -46,7 +46,7 @@ const JournalEntry = () => {
     }
   };
 
-  }
+
 
   return (
     <div className='journal-entry'>
@@ -88,5 +88,4 @@ const JournalEntry = () => {
     
   );
 };
-
 export default JournalEntry;
