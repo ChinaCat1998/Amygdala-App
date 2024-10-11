@@ -1,12 +1,15 @@
 // import React from 'react';
 import MentalHealthTips from '../components/Tips';
 import Footer from '../components/Footer';
-import Nav from '../components/Nav';
+import Header from '../components/Header';
+// import Nav from '../components/Nav';
+import Nav2 from '../components/Nav2';
 
 const TipsPage = () => {
   return (
     <div className="App">
-      <Nav />
+      <Header />
+      <Nav2 />
       <MentalHealthTips />
       <Footer />
     </div>

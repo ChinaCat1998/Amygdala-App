@@ -1,11 +1,14 @@
 /* import React from 'react'; */
+import Header from '../components/Header';
 import JournalEntry from '../components/JournalEntry';
-import NavMenu from '../components/Nav';
+// import Nav from '../components/Nav';
+import Nav2 from '../components/Nav2';
 
 const JournalPage = () => {
   return (
     <div className="App">
-      <NavMenu />
+      <Header />
+      <Nav2 />
       <JournalEntry />
     </div>
   );

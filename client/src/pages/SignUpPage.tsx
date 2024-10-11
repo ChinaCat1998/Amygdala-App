@@ -1,6 +1,6 @@
 // pages/SignupPage.js
 import { useState } from 'react';
-import logo from '../assets/logo/amygdala_logo.png';
+import logo from '../assets/logo/amygdala_logo-crop.png';
 import '../App.css'; 
 
 const SignupPage = () => {
@@ -22,7 +22,7 @@ const SignupPage = () => {
   return (
   
     <div className="signup-page">
-      <img src={logo}  alt="Logo" className="logo" />
+      <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
       <h2>Welcome!!</h2>
       <form onSubmit={handleSignup} className="signup-wrap">
         <div>

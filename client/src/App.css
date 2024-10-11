@@ -16,7 +16,7 @@
 
 html,
 body,
-.wrapper {
+.wrapper, #root, main {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -29,10 +29,6 @@ body {
   font-size: 16px;
   background-color:#ffffff;
   font-family: Inter, sans-serif;
-  padding: 0;
-  font-size: 16px;
-  background-color:#ffffff;
-  font-family: Inter, sans-serif;
 }
 
 .logo {
@@ -40,17 +36,31 @@ body {
   height: auto;
   display: block;
   text-align:center;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+}
+
+nav.updated-nav-tk {
+  background: #fff;
+}
+
+nav.updated-nav-tk a {
+  color: #000;
+}
+
+nav.updated-nav-tk a:hover {
+  color: #000;
+  background: #ff0;
 }
 
 /* -       Login Page & Signup Page-------- */
 
-.login-page {
+.login-page, .signup-page {
   background: linear-gradient(357.09deg, #DD64D8 -3.04%, #FFFFFF 30.85%, #FFFFFF 75.09%);
   max-width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   text-align:center;
+  padding-bottom: 100px;
 }
 
 .signup-page {
@@ -63,21 +73,28 @@ body {
   padding: 20px;
   border-radius: 25px;
   display: block;
+  margin: 0 auto;
 }
 .signup-wrap {
  background: #4F86B6;
 }
+.login-wrap label, signup-wrap label {
+  display: none;
+}
+
 .login-wrap input, .signup-wrap input {
   border-radius: 10px;
   color: #000;
   width: 100%;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
   background: #fff;
   padding: 10px;
 }
-.login-wrap input[type=submit], .signup-wrap input[type=submit] {
+.login-wrap button[type=submit], .signup-wrap button[type=submit] {
   width: 125px;
   text-transform: uppercase;
+  color: #000;
+  margin-bottom: 1.5em;
 }
 /*-------  forgot passowrd & sign up links */
 .login-wrap a {

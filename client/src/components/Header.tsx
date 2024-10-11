@@ -1,12 +1,11 @@
 /*  */
-import logo from '../assets/logo/amygdala_logo.png'
+import logo from '../assets/logo/amygdala_logo-crop.png'
 
 
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="Logo" />
-    
+      <img src={logo} alt="Amygdala - Healing Starts Here" /> 
     </header>
   );
 };
