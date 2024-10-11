@@ -29,6 +29,16 @@ const NavMenu = () => {
             <button className="tipsButton">Healthy Tips <img src={tips} alt="tips-img" className='nav-icon'/></button>
           </Link>
         </li>
+        <li>
+          <Link to='/SignUpPage'>
+            Sign Up
+          </Link>
+        </li>
+        <li>
+          <Link to='/LoginPage'>
+            Login
+          </Link>
+        </li>
       </ul>
     </nav>
   );

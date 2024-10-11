@@ -1,10 +1,16 @@
-/* import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg' */
-import {Outlet} from "react-router-dom"
-import './App.css'
-// import Nav from './components/Nav'
-// import TestPage from './pages/testpage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Nav from './components/Nav'
+import TestPage from './pages/testpage';
+
+import SignUpPage  from './pages/SignUpPage';
+import LoginPage from  './pages/LoginPage';
+import Footer  from './components/Footer';
+import { Outlet } from 'react-router-dom';
+import './App.css';
+
+
+
 
 function App() {
 
@@ -15,8 +21,10 @@ function App() {
       </main>
     </>
   )
+
 }
 
-export default App
+export default App;
+
 
 
