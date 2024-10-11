@@ -21,8 +21,8 @@ export const login = async (req: Request, res: Response): Promise<any> => {   //
 
     const secretKey = process.env.JWT_SECRET_KEY || '';
 
-    const token = jwt.sign({ username }, secretKey, { expiresIn: '1h' });
-    return res.json({ token });
+    const token = jwt.sign({ username, userId: user.id }, secretKey, { expiresIn: '1h' });   // JWT payload will have username
+    return res.json({ token });                                                              // and userId
 };
 
 const router = Router();
