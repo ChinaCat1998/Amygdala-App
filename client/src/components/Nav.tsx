@@ -23,13 +23,21 @@ const NavMenu = () => {
           <Link to='/CalendarPage'>
             <button className="calendarButton">Calendar <img src={calendar} alt="calendar-img" className='nav-icon'/></button>
           </Link>
-          <a href="../SignUpPage">SignUp</a>
         </li>
         <li>
           <Link to='/TipsPage'>
             <button className="tipsButton">Healthy Tips <img src={tips} alt="tips-img" className='nav-icon'/></button>
           </Link>
-          <a href="../LoginPage">Login</a>
+        </li>
+        <li>
+          <Link to='/SignUpPage'>
+            Sign Up
+          </Link>
+        </li>
+        <li>
+          <Link to='/LoginPage'>
+            Login
+          </Link>
         </li>
       </ul>
     </nav>

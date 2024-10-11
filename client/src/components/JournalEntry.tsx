@@ -47,7 +47,6 @@ const JournalEntry = () => {
   };
 
 
-
   return (
     <div className='journal-entry'>
     <form onSubmit={handleSubmit}>
