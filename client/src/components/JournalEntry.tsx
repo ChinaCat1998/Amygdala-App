@@ -22,8 +22,30 @@ const JournalEntry = () => {
     triggers,
     description
     };
-    console.log('Journal Entry Data:', journalData);
+    /* console.log('Journal Entry Data:', journalData); */
     // Here you can send the data to your server or handle it as needed
+    try {
+      const response = await fetch('/createJournalEntry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(journalData)
+      });
+
+      if (response.ok) {
+        console.log('Journal entry created successfully');
+        // Handle successful submission (e.g., clear the form, show a success message)
+      } else {
+        console.error('Failed to create journal entry');
+        // Handle error (e.g., show an error message)
+      }
+    } catch (error) {
+      console.error('Error creating journal entry:', error);
+      // Handle network error (e.g., show an error message)
+    }
+  };
+
   }
 
   return (
