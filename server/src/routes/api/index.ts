@@ -2,7 +2,7 @@ import { Router } from 'express';
 //imports for /api/routes here: user, journalEntry, maybe auth
 import { userRouter } from './user-routes';
 import { journalEntryRouter } from './journal-entry-routes';
-// import { authRouter } from middleware
+// import { authenticateToken } from '../../middleware/auth';  //will need to be added when we can create user/journalEntry with UI
 
 const router = Router();
 
