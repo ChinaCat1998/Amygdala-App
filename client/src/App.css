@@ -95,7 +95,7 @@ nav.updated-nav-tk a:hover {
 .signup-wrap {
  background: #4F86B6;
 }
-.login-wrap label, signup-wrap label {
+.login-wrap label, .signup-wrap label {
   display: none;
 }
 
@@ -111,6 +111,7 @@ nav.updated-nav-tk a:hover {
   width: 125px;
   text-transform: uppercase;
   color: #000;
+  font-weight: bold;
   margin-bottom: 1.5em;
 }
 /*-------  forgot passowrd & sign up links */

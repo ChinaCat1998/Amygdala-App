@@ -30,6 +30,7 @@ const SignupPage = () => {
           <input
             type="text"
             id="username"
+            placeholder='username'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -40,6 +41,7 @@ const SignupPage = () => {
           <input
             type="password"
             id="password"
+            placeholder='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
