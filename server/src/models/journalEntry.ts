@@ -20,7 +20,7 @@ export class JournalEntry extends Model<JournalEntryAttributes, JournalEntryCrea
     declare content: string;
     declare userId: number;
 
-    declare readonly user?: User;  // maybe not needed???
+    declare readonly user?: User;  // maybe not needed??? i think this attaches all data about the user to the entry in DB
     
     declare readonly createdAt: Date;
     declare readonly updatedAt: Date;
