@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
-
+import Footer from '../components/Footer';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -60,6 +60,7 @@ const LoginPage = () => {
         </div>
         <a href="/SignUpPage" className='signup'>Sign Up</a>
       </form>
+      <Footer />
     </div>
   );
 };

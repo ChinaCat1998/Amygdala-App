@@ -22,6 +22,10 @@ html, body,
   padding: 0;
 }
 
+.App {
+  background: linear-gradient(357.09deg, #92d9c6 -3.04%, #FFFFFF 30.85%, #FFFFFF 75.09%);
+}
+
 body {
   margin: 0 auto;
   padding: 0;
@@ -64,7 +68,7 @@ nav.updated-nav-tk a {
   border-radius: 15px;
 }
 
-nav.updated-nav-tk a:hover {
+nav.updated-nav-tk a:hover, nav.updated-nav-tk a:active {
   color: #681e67;
   background: #abdad9;
 }
@@ -336,6 +340,7 @@ footer {
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ccc;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -484,7 +489,7 @@ nav button:hover {
 } 
 
 .journal-page .mood-wrap {
-  max-width: 480px;
+  max-width: 500px;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -540,7 +545,7 @@ nav button:hover {
 
 .calendar {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto 50px;
 }
 
@@ -549,9 +554,15 @@ nav button:hover {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  margin: 0 auto 20px;
   background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
+}
+
+.calendar-header .col {
+ min-height: 80px;
+   justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .icon {
@@ -559,11 +570,70 @@ nav button:hover {
   cursor: pointer;
   min-height: 48px;
 }
+.icon img {
+  width: 50px;
+  height: auto;
+}
+
+h2.mood-legend-title {
+  display: none;
+  color: #582F72;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: .25em;
+}
+
+.mood-legend {
+  display: none;
+  max-width: 480px;
+  /* display: flex; */
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 1em;
+}
+
+.mood-legend .card {
+  flex: 0 0 20%;
+  text-align: center;
+}
+
+.mood-legend .card .color, .mood-legend .card .caption {
+  display: block;
+  font-size: 16px;
+  color: #000;
+}
+
+.mood-legend .card .color.great,
+.mood-legend .card .color.good,
+.mood-legend .card .color.ok,
+.mood-legend .card .color.bad,
+.mood-legend .card .color.awful {
+  background: #abdad9;
+  border-radius: 10px;
+  width: 40px; 
+  height: 40px;
+}
+
+.mood-legend .card .color.good {
+  background: #8dc1d3;
+}
+
+.mood-legend .card .color.ok {
+  background: #82a5c8;
+}
+
+.mood-legend .card .color.bad {
+  background: #dcaebf;
+}
+
+.mood-legend .card .color.awful {
+  background: #bc89bd;
+}
 
 .days {
   display: flex;
-  background-color: #959393;
-  border-bottom: 1px solid #ccc;
+  background-color: #abdad9;
+  border-bottom: 1px solid #582f72;
 }
 
 .row {
@@ -574,18 +644,21 @@ nav button:hover {
   flex: 1;
   padding: 10px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #582f72;
 }
 
 .col-center {
   flex: 1;
   padding: 10px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #582f72;
 }
 
 .col-month {
   color: #000;
+  font-size: 20px;
+  line-height: 1.25em;
+  align-self: center;
 }
 
 .cell {
@@ -599,11 +672,13 @@ nav button:hover {
 
 .cell.disabled {
   color: #090202;
+  opacity: .5;
+  cursor: default;
+  background-color: #fff;
 }
 
 .cell.selected {
-  background-color: #4caf50;
-  color: white;
+  background-color: #abdad9;
 }
 
 .number {
@@ -619,15 +694,16 @@ nav button:hover {
   /* width: 90%;
   height: 90%; */
   z-index: 1;
+  display: none;
 }
  
 /* MentalHealthTips */
 
 .mental-health-tips {
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #dfcfe1;
   border-radius: 8px;
-  max-width: 600px;
+  max-width: 500px;
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -655,10 +731,10 @@ nav button:hover {
 /* JournalEntry */
 
 .journal-entry {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 500px;
+  margin: 0 auto 50px;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #bfedf8;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;

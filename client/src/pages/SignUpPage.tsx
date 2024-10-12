@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
+import Footer from '../components/Footer';
 
 const SignupPage = () => {
   const [username, setUsername] = useState('');
@@ -51,6 +52,7 @@ const SignupPage = () => {
         <button type="submit">Signup</button>
         </div>
       </form>
+      <Footer />
     </div>
    
   );
