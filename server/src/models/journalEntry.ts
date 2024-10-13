@@ -3,7 +3,7 @@ import { User } from "./user";
 
 interface JournalEntryAttributes {
     id: number;
-    title: string;
+    date: string;
     mood: string;
     triggers: string[];
     content: string;
@@ -14,7 +14,7 @@ interface JournalEntryCreationAttributes extends Optional<JournalEntryAttributes
 
 export class JournalEntry extends Model<JournalEntryAttributes, JournalEntryCreationAttributes> implements JournalEntryAttributes {
     declare id: number;
-    declare title: string;
+    declare date: string;
     declare mood: string;
     declare triggers: string[];
     declare content: string;
@@ -34,9 +34,9 @@ export function JournalEntryFactory(sequelize: Sequelize): typeof JournalEntry {
                 autoIncrement: true,
                 primaryKey: true,
             },
-            title: {
+            date: {
                 type: DataTypes.STRING,
-                allowNull: true, // true or false???
+                allowNull: false,
             },
             mood: {
                 type: DataTypes.STRING,
