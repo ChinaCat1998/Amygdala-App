@@ -6,7 +6,6 @@ import TestPage from './pages/testpage';
 import SignUpPage  from './pages/SignUpPage';
 import LoginPage from  './pages/LoginPage';
 import Footer  from './components/Footer';
-// import { Outlet } from 'react-router-dom';
 import './App.css';
 
 
