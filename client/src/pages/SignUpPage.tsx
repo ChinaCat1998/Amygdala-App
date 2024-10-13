@@ -38,8 +38,10 @@ const SignupPage = () => {
   return (
   <>
     <div className="signup-page">
-      <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
-      <h1>Welcome!!</h1>
+      <header>
+        <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
+        <h1>Welcome!!</h1>
+      </header>
       <form onSubmit={handleSignup} className="signup-wrap">
         <div>
           <label htmlFor="username">Username:</label>

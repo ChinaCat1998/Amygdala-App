@@ -122,8 +122,13 @@ nav.updated-nav-tk a:hover, nav.updated-nav-tk a:active {
   width: 125px;
   text-transform: uppercase;
   color: #000;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 20px;
   margin-bottom: 1.5em;
+  padding: 10px;
+  border-radius: 20px;
+  border: 0px solid transparent;
+  cursor: pointer;
 }
 
 .login-error {
@@ -336,7 +341,7 @@ header img {
 h1 {
   font-family: Inter;
   font-size: 64px;
-  font-weight: 900;
+  font-weight: 500;
   line-height: 77.45px;
   color: #6A1D67;
 }
@@ -544,6 +549,7 @@ nav button:hover {
 .journal-page input[type=submit] {
   width: 125px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 /* Calendar.css */
@@ -650,6 +656,14 @@ h2.mood-legend-title {
   padding: 10px;
   text-align: center;
   border: 1px solid #582f72;
+}
+
+.col-start {
+  border-radius: 0 0 0 10px;
+}
+
+.col-end {
+  border-radius: 0 10px 0 0;
 }
 
 .col-center {
@@ -813,10 +827,12 @@ input {
 .triggerButton {
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .triggerButton:hover {
@@ -826,10 +842,12 @@ input {
 .submitButton {
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .submitButton:hover {
@@ -844,6 +862,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 420) {
