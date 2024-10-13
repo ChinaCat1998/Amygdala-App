@@ -10,12 +10,13 @@
   },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install": "npm install && npm --prefix ./client install && npm --prefix ./server install",
-    "build": "npm  --prefix ./client run build && npm --prefix ./server run build",
-    "start": "npm --prefix ./server run start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd client && npm start", 
-    "server": "cd server && npm start"
+    "install": "npm install && cd server && npm i && cd ../client && npm i",
+    "build": "npm run client:build && npm run server:build",
+    "client:build": "cd client && npm run build",
+    "server:build": "cd server && npm run build",
+    "client:start": "cd client && npm run start",
+    "server:start": "cd server && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
