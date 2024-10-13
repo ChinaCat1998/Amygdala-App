@@ -1,22 +1,30 @@
 
-import '../App.css';
+/* import '..App.css'; */
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, isSameMonth, isSameDay, addMonths, subMonths } from 'date-fns';
 import arrowRight from '../assets/icons/next-arrow.jpg';
 import arrowLeft from '../assets/icons/prev-arrow.jpg'
 
 
+
 const Calendar = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const navigate = useNavigate();
+
+  const handleDateClick = (day: any) => {
+    setSelectedDate(day);
+    navigate(`/journal-entry/${format(day, 'yyyy-MM-dd')}`);
+  };
 
   const renderHeader = () => {
     const dateFormat = "MMMM yyyy";
 
     return (
-      <div className="calendar-header row flex-middle">
-        <div className="col col-start">
-          <div className="icon" onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}>
+      <div className="header row flex-middle">
+        <div className="col col-start" onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}>
+          <div className="icon">
             <img src={arrowLeft} alt="iconPrevious" />
           </div>
         </div>
@@ -98,7 +106,7 @@ const Calendar = () => {
           <div
             className={`col cell ${!isSameMonth(day, monthStart) ? "disabled" : isSameDay(day, selectedDate) ? "selected" : ""}`}
             key={i}
-            onClick={() => setSelectedDate(cloneDay)}
+            onClick={() => handleDateClick(cloneDay)}
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
