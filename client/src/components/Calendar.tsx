@@ -20,6 +20,11 @@ const Calendar = () => {
 
   const renderHeader = () => {
     const dateFormat = "MMMM yyyy";
+// User story - I want a date to be clickable I there is a journal post associated with that date
+// Acceptence Criteria: When journal posts are visible in the calendar as links and are clickable
+// Need to add useEffect to pull blog posts from the database
+// the posts should be limited to the user and the current calendar dates visible
+// 
 
     return (
       <div className="header row flex-middle">
@@ -101,7 +106,9 @@ const Calendar = () => {
       for (let i = 0; i < 7; i++) {
         formattedDate = format(day, dateFormat);
         const cloneDay = day;
-
+// add a class to the cell div for the mood of the journal entry
+// add a condition that if the date has a blog post the number is wrapped in a link to the Journal Entry page. 
+// If there is no Journal Entry the number is not clickable.
         days.push(
           <div
             className={`col cell ${!isSameMonth(day, monthStart) ? "disabled" : isSameDay(day, selectedDate) ? "selected" : ""}`}

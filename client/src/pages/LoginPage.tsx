@@ -41,9 +41,10 @@ const LoginPage = () => {
   return (
     <>
     <div className="login-page">
-    
-      <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
-      <h1>Welcome Back!!</h1>
+      <header>
+        <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
+        <h1>Welcome Back!!</h1>
+      </header>
       <form onSubmit={handleSubmit} className="login-wrap">
         <div>
           <label htmlFor="username">Username:</label>
