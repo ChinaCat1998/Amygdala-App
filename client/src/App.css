@@ -125,6 +125,14 @@ nav.updated-nav-tk a:hover, nav.updated-nav-tk a:active {
   font-weight: bold;
   margin-bottom: 1.5em;
 }
+
+.login-error {
+  margin-top: 14px;
+  color: red;
+  background: black;
+  font-size: 0.9em;
+}
+
 /*-------  forgot passowrd & sign up links */
 .login-wrap a {
   color: #fff;

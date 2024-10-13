@@ -20,6 +20,7 @@ import TipsPage from './pages/TipsPage.tsx'
 import JournalPage from './pages/JournalPage.tsx';
 import SignupPage from './pages/SignUpPage.tsx';
 import LoginPage from './pages/LoginPage.tsx';
+import JournalEntryPage from './components/JournalEntryPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -32,34 +33,32 @@ const router = createBrowserRouter([
       },
       {
         path: '/SignUpPage',
-        index: true,
         element: <SignupPage />
       },
       {
         path: '/LoginPage',
-        index: true,
         element: <LoginPage />
       },
       {
         path: '/Home',
-        index: true,
         element: <Home />
       },
       {
         path: '/CalendarPage',
-        index: true,
         element: <CalendarPage />,
       },
       {
         path: '/tipspage',
-        index: true,
         element: <TipsPage />,
       },
       // placeholder, will replace with route to journalentry
       {
         path: '/JournalPage',
-        index: true,
         element: <JournalPage />
+      },
+      {
+        path: '/journal-entry/:date',
+        element: <JournalEntryPage />
       }
     ],
   },
