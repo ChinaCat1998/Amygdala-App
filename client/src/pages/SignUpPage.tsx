@@ -21,10 +21,10 @@ const SignupPage = () => {
   };
 
   return (
-  
+  <>
     <div className="signup-page">
       <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
-      <h2>Welcome!!</h2>
+      <h1>Welcome!!</h1>
       <form onSubmit={handleSignup} className="signup-wrap">
         <div>
           <label htmlFor="username">Username:</label>
@@ -52,9 +52,9 @@ const SignupPage = () => {
         <button type="submit">Signup</button>
         </div>
       </form>
-      <Footer />
     </div>
-   
+    <Footer />
+  </> 
   );
 };
 

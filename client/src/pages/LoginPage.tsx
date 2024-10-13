@@ -28,10 +28,11 @@ const LoginPage = () => {
   };
 
   return (
+    <>
     <div className="login-page">
      
       <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
-      <h2>Welcome Back!!</h2>
+      <h1>Welcome Back!!</h1>
       <form onSubmit={handleSubmit} className="login-wrap">
         <div>
           <label htmlFor="username">Username:</label>
@@ -60,8 +61,9 @@ const LoginPage = () => {
         </div>
         <a href="/SignUpPage" className='signup'>Sign Up</a>
       </form>
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 };
 

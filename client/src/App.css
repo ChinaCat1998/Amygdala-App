@@ -15,7 +15,7 @@
 }
 
 html, body,
-.wrapper, #root, .App, main {
+.wrapper, #root, .App {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -86,6 +86,13 @@ nav.updated-nav-tk a:hover, nav.updated-nav-tk a:active {
 
 .signup-page {
   background: linear-gradient(180deg, #FFFFFF 70.5%, #FB86A4 100%);
+}
+
+.login-page h1, .signup-page h1 {
+  color: #582F72;
+  margin-bottom: .5em;
+    font-size: 40px;
+    font-weight: 500;
 }
 
 .login-wrap, .signup-wrap {
@@ -333,16 +340,27 @@ p {
   line-height: 24.2px;
 }
 
-/* Footer styles */
+/* -       Footer Help Line -------- */
 footer {
   display: flex;
   background-color: #D9D9D9;
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ccc;
-  position: fixed;
-  bottom: 0;
+  /* position: fixed; */
+  /* bottom: 0; */
   width: 100%;
+  font-size: 20px;
+}
+
+.footer-reference a {
+  color: #649460;
+  text-decoration: none;
+}
+
+.footer-reference a.call {
+  color: #002BC1;
+  text-decoration: underline;
 }
 
 .footer-text {
@@ -458,27 +476,6 @@ nav button:hover {
   margin-right: 10px;
   width: 40px;
   height: 40px;
-}
-
-
-/* -       Footer Help Line -------- */
-
-.footer {
-  background: #d9d9d9;
-  width: 100%;
-  font-size: 20px;
-  text-align: center;
- 
-}
-
-.footer-reference a {
-  color: #649460;
-  text-decoration: none;
-}
-
-.footer-reference a.call {
-  color: #002BC1;
-  text-decoration: underline;
 }
 
 /* --------- Journal Page ----------- */
