@@ -9,26 +9,25 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  color: rgb(255, 255, 255);
+  color: #000;
   padding: 0;
   margin: 0 auto;
 }
 
-html,
-body,
-.wrapper {
+html, body,
+.wrapper, #root, .App {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
+.App {
+  background: linear-gradient(357.09deg, #92d9c6 -3.04%, #FFFFFF 30.85%, #FFFFFF 75.09%);
+}
+
 body {
   margin: 0 auto;
-  padding: 0;
-  font-size: 16px;
-  background-color:#ffffff;
-  font-family: Inter, sans-serif;
   padding: 0;
   font-size: 16px;
   background-color:#ffffff;
@@ -40,21 +39,106 @@ body {
   height: auto;
   display: block;
   text-align:center;
+  margin: 0 auto 20px;
+}
+
+nav.updated-nav-tk {
+  background: #fff;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 0;
+}
+
+nav.updated-nav-tk ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+nav.updated-nav-tk li {
+  display: inline-block;
+}
+
+nav.updated-nav-tk a {
+  color: #681e67; 
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+nav.updated-nav-tk a:hover, nav.updated-nav-tk a:active {
+  color: #681e67;
+  background: #abdad9;
 }
 
 /* -       Login Page & Signup Page-------- */
 
-.login-page {
+.login-page, .signup-page {
   background: linear-gradient(357.09deg, #DD64D8 -3.04%, #FFFFFF 30.85%, #FFFFFF 75.09%);
   max-width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   text-align:center;
+  padding-bottom: 100px;
 }
 
-/* -       Login Page & Signup Page-------- */
+.signup-page {
+  background: linear-gradient(180deg, #FFFFFF 70.5%, #FB86A4 100%);
+}
 
-/* SignUpPage.css */
+.login-page h1, .signup-page h1 {
+  color: #582F72;
+  margin-bottom: .5em;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.login-wrap, .signup-wrap {
+  max-width: 420px;
+  background: #CD305D;
+  padding: 20px;
+  border-radius: 25px;
+  display: block;
+  margin: 0 auto;
+}
+.signup-wrap {
+ background: #4F86B6;
+}
+.login-wrap label, .signup-wrap label {
+  display: none;
+}
+
+.login-wrap input, .signup-wrap input {
+  border-radius: 10px;
+  color: #000;
+  width: 100%;
+  margin-bottom: 1em;
+  background: #fff;
+  padding: 10px;
+}
+.login-wrap button[type=submit], .signup-wrap button[type=submit] {
+  width: 125px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+/*-------  forgot passowrd & sign up links */
+.login-wrap a {
+  color: #fff;
+  text-decoration: none;
+}
+.login-wrap a.signup {
+  font-size: 20px;
+  font-weight: 600;
+}
+.signup-wrap {
+ background: #4F86B6;
+}
+
+/* SignUpPage.css
 .signup-page {
   max-width: 400px;
   margin: auto;
@@ -104,14 +188,8 @@ button:hover {
  justify-content: center;
 
 }
- .logo{
-  max-width: 70%;
- 
-  display: block;
-  margin-bottom: 20px;
-}
-
-/*LoginPage.css */
+ */
+/*LoginPage.css 
 .login-page {
   max-width: 400px;
   margin: auto;
@@ -140,7 +218,7 @@ button:hover {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  background: black;
+  background: rgb(255, 255, 255);
 }
 
 .login-page .error {
@@ -166,15 +244,15 @@ button:hover {
    display: block;
    margin-bottom: 20px;
  }
- 
-
+ */
 
 /* -       Welcome Page-------- */
 
 .welcome-wrap h1 {
-   font-size: 64px;
+   font-size: 3em;
    font-weight: 900;
    color: #6A1D67;
+   text-align:center;
 }
 
 .welcome-wrap h2 {
@@ -183,8 +261,9 @@ button:hover {
    color: #CF365A;
    font-size: 20px;
    font-weight: 400;
+   text-align:center;
 }
-
+/*
 .button-wrap {
   width: 380px;
   padding: 20px;
@@ -225,7 +304,7 @@ button:hover {
 .button-wrap.healthy-tips a {
   color: #000;
 }
-
+*/
 /* Header styles */
 header {
   text-align: center;
@@ -233,9 +312,16 @@ header {
   background-color:#ffffff;
 }
 
+header a.login-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1em;
+}
+
 header img {
-  width: 100px;
-  height: 100px;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -252,18 +338,29 @@ p {
   font-size: 20px;
   font-weight: 400;
   line-height: 24.2px;
-  color: #CF365A;
 }
 
-/* Footer styles */
+/* -       Footer Help Line -------- */
 footer {
   display: flex;
   background-color: #D9D9D9;
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ccc;
-  bottom: 0;
+  /* position: fixed; */
+  /* bottom: 0; */
   width: 100%;
+  font-size: 20px;
+}
+
+.footer-reference a {
+  color: #649460;
+  text-decoration: none;
+}
+
+.footer-reference a.call {
+  color: #002BC1;
+  text-decoration: underline;
 }
 
 .footer-text {
@@ -287,8 +384,10 @@ footer {
 /* src/components/NavMenu.css */
 
 nav {
-  background-color: #533174; /* Bootstrap primary color */
+ /*  background-color: #533174; Bootstrap primary color */
   padding: 20px 10px; /* Padding for nav */
+  width: 100%;
+  max-width: 480px;
 }
 
 nav ul {
@@ -296,12 +395,13 @@ nav ul {
   margin: 0; /* Reset margin */
   padding: 0; /* Reset padding */
   display: flex; /* Use flexbox for horizontal layout */
+  flex-direction: column;
 }
-
+/* 
 nav li {
-  margin-right: 20px; /* Space between items */
+ margin-right: 20px;  Space between items 
 }
-
+*/
 nav a {
   color: white; /* Text color */
   text-decoration: none; /* Remove underline */
@@ -378,30 +478,6 @@ nav button:hover {
   height: 40px;
 }
 
-
-/* -       Footer Help Line -------- */
-
-.footer {
- 
-  background: #533174;
-  width: 100%;
-  
-  font-size: 20px;
-  text-align: center;
-  
-}
-
-
-.footer-reference a {
-  color: #00A911;
-  text-decoration: none;
-}
-
-.footer-reference a.call {
-  color: #002BC1;
-  text-decoration: underline;
-}
-
 /* --------- Journal Page ----------- */
 
 .journal-page h1 /* How Are You?*/ {
@@ -410,7 +486,7 @@ nav button:hover {
 } 
 
 .journal-page .mood-wrap {
-  max-width: 480px;
+  max-width: 500px;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -466,8 +542,8 @@ nav button:hover {
 
 .calendar {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 500px;
+  margin: 0 auto 50px;
 }
 
 .calendar-header {
@@ -475,9 +551,15 @@ nav button:hover {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  margin: 0 auto 20px;
   background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
+}
+
+.calendar-header .col {
+ min-height: 80px;
+   justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .icon {
@@ -485,11 +567,70 @@ nav button:hover {
   cursor: pointer;
   min-height: 48px;
 }
+.icon img {
+  width: 50px;
+  height: auto;
+}
+
+h2.mood-legend-title {
+  display: none;
+  color: #582F72;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: .25em;
+}
+
+.mood-legend {
+  display: none;
+  max-width: 480px;
+  /* display: flex; */
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 1em;
+}
+
+.mood-legend .card {
+  flex: 0 0 20%;
+  text-align: center;
+}
+
+.mood-legend .card .color, .mood-legend .card .caption {
+  display: block;
+  font-size: 16px;
+  color: #000;
+}
+
+.mood-legend .card .color.great,
+.mood-legend .card .color.good,
+.mood-legend .card .color.ok,
+.mood-legend .card .color.bad,
+.mood-legend .card .color.awful {
+  background: #abdad9;
+  border-radius: 10px;
+  width: 40px; 
+  height: 40px;
+}
+
+.mood-legend .card .color.good {
+  background: #8dc1d3;
+}
+
+.mood-legend .card .color.ok {
+  background: #82a5c8;
+}
+
+.mood-legend .card .color.bad {
+  background: #dcaebf;
+}
+
+.mood-legend .card .color.awful {
+  background: #bc89bd;
+}
 
 .days {
   display: flex;
-  background-color: #959393;
-  border-bottom: 1px solid #ccc;
+  background-color: #abdad9;
+  border-bottom: 1px solid #582f72;
 }
 
 .row {
@@ -500,18 +641,21 @@ nav button:hover {
   flex: 1;
   padding: 10px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #582f72;
 }
 
 .col-center {
   flex: 1;
   padding: 10px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #582f72;
 }
 
 .col-month {
   color: #000;
+  font-size: 20px;
+  line-height: 1.25em;
+  align-self: center;
 }
 
 .cell {
@@ -525,11 +669,13 @@ nav button:hover {
 
 .cell.disabled {
   color: #090202;
+  opacity: .5;
+  cursor: default;
+  background-color: #fff;
 }
 
 .cell.selected {
-  background-color: #4caf50;
-  color: white;
+  background-color: #abdad9;
 }
 
 .number {
@@ -545,15 +691,16 @@ nav button:hover {
   /* width: 90%;
   height: 90%; */
   z-index: 1;
+  display: none;
 }
  
 /* MentalHealthTips */
 
 .mental-health-tips {
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #dfcfe1;
   border-radius: 8px;
-  max-width: 600px;
+  max-width: 500px;
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -581,10 +728,10 @@ nav button:hover {
 /* JournalEntry */
 
 .journal-entry {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 500px;
+  margin: 0 auto 50px;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #bfedf8;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -689,4 +836,13 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 420) {
+  nav button {
+    max-width: 280px;
+  }
+  .journalButton, .tipsButton {
+    font-size: 1.75em;
+  }
 }

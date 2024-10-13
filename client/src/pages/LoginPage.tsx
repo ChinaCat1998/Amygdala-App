@@ -1,8 +1,8 @@
 // pages/LoginPage.js
 import { useState } from 'react';
-import logo from '../assets/logo/amygdala_logo.png';
+import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
-
+import Footer from '../components/Footer';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -28,16 +28,18 @@ const LoginPage = () => {
   };
 
   return (
+    <>
     <div className="login-page">
      
-      <img src={logo}  alt="Logo" className="logo" />
-      <h2>Welcome Back!!</h2>
-      <form onSubmit={handleSubmit}>
+      <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
+      <h1>Welcome Back!!</h1>
+      <form onSubmit={handleSubmit} className="login-wrap">
         <div>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
+            placeholder='username'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -48,6 +50,7 @@ const LoginPage = () => {
           <input
             type="password"
             id="password"
+            placeholder='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -56,8 +59,11 @@ const LoginPage = () => {
         <div className='button-container'>
         <button type="submit">Login</button>
         </div>
+        <a href="/SignUpPage" className='signup'>Sign Up</a>
       </form>
     </div>
+    <Footer />
+    </>
   );
 };
 

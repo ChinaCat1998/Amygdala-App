@@ -1,7 +1,8 @@
 // pages/SignupPage.js
 import { useState } from 'react';
-import logo from '../assets/logo/amygdala_logo.png';
+import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
+import Footer from '../components/Footer';
 
 const SignupPage = () => {
   const [username, setUsername] = useState('');
@@ -20,16 +21,17 @@ const SignupPage = () => {
   };
 
   return (
-  
+  <>
     <div className="signup-page">
-      <img src={logo}  alt="Logo" className="logo" />
-      <h2>Welcome!!</h2>
-      <form onSubmit={handleSignup}>
+      <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
+      <h1>Welcome!!</h1>
+      <form onSubmit={handleSignup} className="signup-wrap">
         <div>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
+            placeholder='username'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -40,6 +42,7 @@ const SignupPage = () => {
           <input
             type="password"
             id="password"
+            placeholder='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -50,7 +53,8 @@ const SignupPage = () => {
         </div>
       </form>
     </div>
-   
+    <Footer />
+  </> 
   );
 };
 

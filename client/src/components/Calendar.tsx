@@ -2,8 +2,8 @@
 import '../App.css';
 import { useState } from 'react';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, isSameMonth, isSameDay, addMonths, subMonths } from 'date-fns';
-import arrowRight from '../assets/icons/arrowRight.svg';
-import arrowLeft from '../assets/icons/arrowLeft.svg'
+import arrowRight from '../assets/icons/next-arrow.jpg';
+import arrowLeft from '../assets/icons/prev-arrow.jpg'
 
 
 const Calendar = () => {
@@ -20,6 +20,7 @@ const Calendar = () => {
             <img src={arrowLeft} alt="iconPrevious" />
           </div>
         </div>
+
         <div className="col col-center">
           <span className="col-month">{format(currentMonth, dateFormat)}</span>
         </div>
@@ -27,6 +28,36 @@ const Calendar = () => {
           <div className="icon"><img src={arrowRight} alt="iconNext" /></div>
         </div>
       </div>
+    );
+  };
+
+  const renderMoods = () => {
+    return (
+      <>
+        <h2 className="mood-legend-title">Mood Legend</h2>
+        <div className="mood-legend">
+            <div className="card"> 
+              <div className="color great"></div>
+              <div className="caption">Great</div>
+            </div>
+            <div className="card"> 
+              <div className="color good"></div>
+              <div className="caption">Good</div>
+            </div>
+            <div className="card"> 
+              <div className="color ok"></div>
+              <div className="caption">OK</div>
+            </div>
+            <div className="card"> 
+              <div className="color bad"></div>
+              <div className="caption">Bad</div>
+            </div>
+            <div className="card"> 
+              <div className="color great"></div>
+              <div className="caption">Awful</div>
+            </div>
+        </div>
+      </>
     );
   };
 
@@ -88,6 +119,7 @@ const Calendar = () => {
   return (
     <div className="calendar">
       {renderHeader()}
+      {renderMoods()}
       {renderDays()}
       {renderCells()}
     </div>

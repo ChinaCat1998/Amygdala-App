@@ -54,14 +54,15 @@ const JournalEntry = () => {
     <div className='journal-entry'>
     <form onSubmit={handleSubmit}>
       <h1 className='journal-calendar-text'>{new Date().toDateString()}</h1>
-      <div className='mood-emojis'>
-        <div className="mood-select"><span onClick={() => setMood('great')} role="img" aria-label="great">😃</span></div>
-        <div className='mood-select'><span onClick={() => setMood('good')} role="img" aria-label="good">🙂</span></div>
-        <div className='mood-select'><span onClick={() => setMood('ok')} role="img" aria-label="ok">😐</span></div>
-        <div className='mood-select'><span onClick={() => setMood('bad')} role="img" aria-label="bad">😞</span></div>
-        <div className='mood-select'><span onClick={() => setMood('awful')} role="img" aria-label="awful">😫</span></div>
-      </div>
       <div className="mood-description">Mood: {mood}</div>
+      <div className='mood-emojis'>
+        <div className="mood-select"><span onClick={() => setMood('great')} role="img" aria-label="great">😃</span>Great</div>
+        <div className='mood-select'><span onClick={() => setMood('good')} role="img" aria-label="good">🙂</span>Good</div>
+        <div className='mood-select'><span onClick={() => setMood('ok')} role="img" aria-label="ok">😐</span>OK</div>
+        <div className='mood-select'><span onClick={() => setMood('bad')} role="img" aria-label="bad">😞</span>Bad</div>
+        <div className='mood-select'><span onClick={() => setMood('awful')} role="img" aria-label="awful">😫</span>Awful</div>
+      </div>
+      
       <div className="mood-triggers">
         <h2 className='journal-whats-affecting-text'>What's affecting your mood?</h2>
         <div className="triggers-list">

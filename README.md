@@ -9,12 +9,15 @@
 Amygdala is a Mental Health Tracker application that helps users with managing their mental health. Users can track their moods, journal their thoughts and feelings, and review past posts so they can see the progress they are making and reflect on previous life events. Also users can view helpful tips on improving their mental health.
 
 ## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Questions](#questions)
-- [Credits](#credits)
-- [License](#license)
+<details>
+<ol>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#questions">Questions</a></li>
+<li><a href="#credits">Credits</a></li>
+<li><a href="#license">License</a></li>
+</ol>
+</details>
 
 ## Installation<a id="installation"></a>
 
@@ -42,7 +45,7 @@ Please share any questions, comments or bugs in the <a href="https://github.com/
 
 ## Credits<a id="credits"></a>
 
-The Amygdala app was developed by <a href="https://github.com/ChinaCat1998">Cat</a>, <a href="#">Harleen</a>,
+The Amygdala app was developed by <a href="https://github.com/ChinaCat1998">Cat</a>, <a href="https://github.com/Harleenkahlon11">Harleen</a>,
 <a href="https://github.com/Leo-webdev7">Leo</a>, <a href="https://github.com/thymetime">Olyad</a>, <a href="https://github.com/PhilipMcF">Phil</a>, and <a href="https://github.com/sketchyTK">Tony</a>.
 
 ## License
@@ -51,4 +54,3 @@ Please View <a href="https://github.com/ChinaCat1998/Amygdala-App?tab=MIT-1-ov-f
 ## Live Deployment
 
 <a href="#">Live Deployment on Render</a>
-
