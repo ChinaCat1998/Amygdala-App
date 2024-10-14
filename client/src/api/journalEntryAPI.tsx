@@ -48,9 +48,9 @@ const retrieveJournalEntry = async(entryId: string): Promise<JournalEntryData> =
 }
 
 // function that calls /api/journal-entries endpoint with date query to retrieve a journal entry for a user
-const retrieveJournalEntryByDate = async(date: string): Promise<JournalEntryData> => {
+const retrieveJournalEntryByDate = async(date: string) => {
     try {
-        const response = await fetch(`/api/journal-entries?date=${date}`, {
+        const response = await fetch(`/api/journal-entries/date?date=${date}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${Auth.getToken()}`
@@ -61,6 +61,7 @@ const retrieveJournalEntryByDate = async(date: string): Promise<JournalEntryData
         if (!response.ok){
             throw new Error('Invalid API response, check network tab!');
         }
+        console.log(JSON.stringify(data));
         return data;
     }
     catch (error){
