@@ -57,7 +57,7 @@ interface JournalEntry {
   date: string;
   mood: string;
   triggers: string[];
-  description: string;
+  content: string;
 }
 
 const formatDateForQuery = (dateString: string) => {
@@ -96,7 +96,7 @@ const JournalEntryPage = () => {
         <div className="journal-entry">
           <p><strong>Mood:</strong> {entry.mood}</p>
           <p><strong>Triggers:</strong> {entry.triggers.join(', ')}</p>
-          <p><strong>Description:</strong> {entry.description}</p>
+          <p><strong>Description:</strong> {entry.content}</p>
         </div>
       ) : (
         <p>No journal entry for this date.</p>
