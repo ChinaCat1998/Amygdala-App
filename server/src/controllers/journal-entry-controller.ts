@@ -45,9 +45,9 @@ export const getAllJournalEntries = async (req: Request, res: Response) => {
     }
 }
 
-// GET /api/journal-entries with date query parameter
+// GET /api/journal-entries with date query parameter / for a specific user
 export const getJournalEntryByDate = async (req: Request, res: Response) => {
-    const date = req.query;
+    const { date } = req.query as { date: string };
     console.log(date);
     try {
         const journalEntries = await JournalEntry.findAll({
