@@ -1,7 +1,7 @@
 {
   "name": "amygdala-app",
   "version": "1.0.0",
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "Amygdala is a Mental Health Tracker application that helps users with managing their mental health.",
   "main": "index.js",
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.2",
