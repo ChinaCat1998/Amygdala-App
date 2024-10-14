@@ -1,38 +1,50 @@
 // pages/LoginPage.js
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
 import Footer from '../components/Footer';
 
-const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+import { login } from '../api/authAPI';
+import Auth from '../utils/auth';
+import { set } from 'date-fns';
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+const LoginPage = () => {
+  const [loginData, setLoginData] = useState({
+    username: '',
+    password: ''
+  });
+
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setLoginData({
+      ...loginData,
+      [name]: value
+    });
+    setErrorMsg(''); 
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-   
-    const storedPassword = localStorage.getItem(username);
-    
-  
-    if (storedPassword && storedPassword === password) {
-      alert('Login successfully!');
-    
-    } else {
-      alert("Username doesn't exist or password is incorrect");
+    try {
+      const data = await login(loginData);
+      Auth.login(data.token);
+      setErrorMsg('');
     }
-    
- 
-    setUsername('');
-    setPassword('');
+    catch (error){
+      console.error('Failed to login: ', error);
+      setErrorMsg('Failed to login. Please check your credentials.');
+    }
   };
 
   return (
     <>
     <div className="login-page">
-     
-      <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
-      <h1>Welcome Back!!</h1>
+      <header>
+        <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
+        <h1>Welcome Back!!</h1>
+      </header>
       <form onSubmit={handleSubmit} className="login-wrap">
         <div>
           <label htmlFor="username">Username:</label>
@@ -40,8 +52,9 @@ const LoginPage = () => {
             type="text"
             id="username"
             placeholder='username'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            name='username'
+            value={loginData.username}
+            onChange={handleChange}
             required
           />
         </div>
@@ -51,8 +64,9 @@ const LoginPage = () => {
             type="password"
             id="password"
             placeholder='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name='password'
+            value={loginData.password}
+            onChange={handleChange}
             required
           />
         </div>
@@ -60,6 +74,7 @@ const LoginPage = () => {
         <button type="submit">Login</button>
         </div>
         <a href="/SignUpPage" className='signup'>Sign Up</a>
+        <p className='login-error'>{errorMsg}</p>
       </form>
     </div>
     <Footer />

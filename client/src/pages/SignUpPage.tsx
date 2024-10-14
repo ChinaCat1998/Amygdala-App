@@ -3,28 +3,45 @@ import { useState } from 'react';
 import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
 import Footer from '../components/Footer';
+import { createUser } from '../api/userAPI';
 
 const SignupPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [signUpData, setSignUpData] = useState({
+    username: '',
+    password: '',
+  });
 
-  const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
+  const [errorMsg, setErrorMsg] = useState(''); 
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setSignUpData({
+      ...signUpData,
+      [name]: value
+    });
+    setErrorMsg(''); 
+  };
+
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Save username and password to localStorage
-    localStorage.setItem(username, password);
-    alert('Signup successful! You can now log in.');
-    
-  
-    setUsername('');
-    setPassword('');
+    try {
+      const data = await createUser(signUpData);
+      alert('SignUp successful!');
+      window.location.assign('/LoginPage');
+    }
+    catch (error){
+      console.error('Failed to signup: ', error);
+      setErrorMsg('Failed to signup. Please try again later.');
+    }
   };
 
   return (
   <>
     <div className="signup-page">
-      <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
-      <h1>Welcome!!</h1>
+      <header>
+        <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
+        <h1>Welcome!!</h1>
+      </header>
       <form onSubmit={handleSignup} className="signup-wrap">
         <div>
           <label htmlFor="username">Username:</label>
@@ -32,8 +49,9 @@ const SignupPage = () => {
             type="text"
             id="username"
             placeholder='username'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            name='username'
+            value={signUpData.username}
+            onChange={handleChange}
             required
           />
         </div>
@@ -43,8 +61,9 @@ const SignupPage = () => {
             type="password"
             id="password"
             placeholder='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name='password'
+            value={signUpData.password}
+            onChange={handleChange}
             required
           />
         </div>

@@ -47,6 +47,29 @@ const retrieveJournalEntry = async(entryId: string): Promise<JournalEntryData> =
     }
 }
 
+// function that calls /api/journal-entries endpoint with date query to retrieve a journal entry for a user
+const retrieveJournalEntryByDate = async(date: string) => {
+    try {
+        const response = await fetch(`/api/journal-entries/date?date=${date}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${Auth.getToken()}`
+            }
+        })
+        const data = await response.json();
+
+        if (!response.ok){
+            throw new Error('Invalid API response, check network tab!');
+        }
+        console.log(JSON.stringify(data));
+        return data;
+    }
+    catch (error){
+        console.log('Error retrieving journal entry: ', error);
+        return Promise.reject('Could not retrieve journal entry');
+    }
+}
+
 // function that calls /api/journal-entries endpoint to create a new journal entry
 const createJournalEntry = async(body: JournalEntryData) => {
     try {
@@ -121,4 +144,4 @@ const deleteJournalEntry = async(entryId: string): Promise<ApiMessage> => {
     }
 }
 
-export { retrieveAllJournalEntries, retrieveJournalEntry, createJournalEntry, updateJournalEntry, deleteJournalEntry};
+export { retrieveAllJournalEntries, retrieveJournalEntry, retrieveJournalEntryByDate, createJournalEntry, updateJournalEntry, deleteJournalEntry};

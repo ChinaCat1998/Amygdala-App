@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { JournalEntry } from '../models/journalEntry';
 import { User } from '../models/user';
+import { isConstructorDeclaration } from 'typescript';
 
 // GET /api/journal-entries-allusers
 export const getAllJournalEntriesAllUsers = async (req: Request, res: Response) => {
@@ -21,13 +22,37 @@ export const getAllJournalEntriesAllUsers = async (req: Request, res: Response) 
     }
 }
 
-// GET /api/journal-entries
+// GET /api/journal-entries - FOR ALL ENTRIES FROM A USER
 export const getAllJournalEntries = async (req: Request, res: Response) => {
     const { userId } = req.body;
     try {
         const journalEntries = await JournalEntry.findAll({
             where: {
                 userId: userId,                             // should get entries only from user requesting it
+            },
+            include: [
+                {
+                    model: User,
+                    as: 'user',
+                    attributes: { exclude: ['password'] },  
+                },                                          
+            ],
+        });
+        res.json(journalEntries);
+    }
+    catch (error: any) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
+// GET /api/journal-entries with date query parameter / for a specific user
+export const getJournalEntryByDate = async (req: Request, res: Response) => {
+    const { date } = req.query as { date: string };
+    console.log(date);
+    try {
+        const journalEntries = await JournalEntry.findAll({
+            where: {
+                date: date,                             
             },
             include: [
                 {

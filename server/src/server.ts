@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { sequelize } from './models/index';
 import routes from './routes/index';
+import path from 'path';
 
 const forceDatabaseRefresh = false;
 
@@ -10,16 +11,14 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(express.static('../client/dist'));
-
-app.get('/', (req, res) => {
-  res.send('Express + TypeScript Server');
-});
+app.use(express.static(path.join(__dirname, '../../client/dist')));
 
 app.use(express.json());
 app.use(routes);
 
-// todo?: serve static files; app.use(express.json()); app.use(routes);
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../client/dist/index.html')); // Serve index.html for all unmatched routes
+});
 
 // sync conntection to database
 // Create schema if it doesn't exist 

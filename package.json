@@ -1,7 +1,7 @@
 {
   "name": "amygdala-app",
   "version": "1.0.0",
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "Amygdala is a Mental Health Tracker application that helps users with managing their mental health.",
   "main": "index.js",
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.2",
@@ -10,12 +10,16 @@
   },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "install": "npm install && npm --prefix ./client install && npm --prefix ./server install",
-    "build": "npm  --prefix ./client run build && npm --prefix ./server run build",
-    "start": "npm --prefix ./server run start",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "npm run client:build && npm run server:build",
+    "client:install": "cd client && npm i",
+    "server:install": "cd server && npm i",
+    "client:build": "cd client && npm run build",
+    "server:build": "cd server && npm run build",
+    "client:start": "cd client && npm run start",
+    "server:start": "cd server && npm run start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd client && npm start", 
-    "server": "cd server && npm start"
+    "seed": "cd server && npm run seed"
   },
   "keywords": [],
   "author": "",
