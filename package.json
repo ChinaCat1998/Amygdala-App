@@ -13,7 +13,7 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "npm run client:build && npm run server:build",
     "client:install": "cd client && npm i",
-    "server:install": "cd client && npm i",
+    "server:install": "cd server && npm i",
     "client:build": "cd client && npm run build",
     "server:build": "cd server && npm run build",
     "client:start": "cd client && npm run start",
