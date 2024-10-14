@@ -850,6 +850,8 @@ input {
   font-weight: 600;
 }
 
+
+
 .submitButton:hover {
   background-color: #373b85;
 }
@@ -872,4 +874,47 @@ input {
   .journalButton, .tipsButton {
     font-size: 1.75em;
   }
+}
+
+/* Journal entry page  */
+
+.closeButton {
+    display: flex;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.closeButton:hover {
+  background-color: #373b85;
+}
+
+.journal-entry-page-header {
+  font-family: Inter;
+  margin: 50px 50px 50px 50px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journal-entry-page-paragraph {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 15px 15px 15px;
+  color: red;
+}
+
+.validation-message {
+  color: red;
 }
