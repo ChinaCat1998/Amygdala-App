@@ -35,7 +35,7 @@ function HomePage () {
     return (
         <div className="welcome-wrap">
             <Header />
-            <Nav2 />
+            {/* <Nav2 /> */}
             <h1>
                 Welcome to Amygdala!
             </h1>
