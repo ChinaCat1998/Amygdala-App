@@ -38,11 +38,11 @@ const JournalEntryPage = () => {
     fetchEntry();
   }, [date]);
 
-  const formatedDate = new Date(date || '').toString().slice(0, 16);
+  const formattedDate = new Date(date || '').toString().slice(0, 16);
 
   return (
     <div className="journal-entry-page">
-      <h1 className='journal-entry-page-header'>Journal Entry for {formatedDate}</h1>
+      <h1 className='journal-entry-page-header'>Journal Entry for {formattedDate}</h1>
       {entry ? (
         <div className="journal-entry">
           <p><strong>Mood:</strong> {entry.mood}</p>
