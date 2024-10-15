@@ -1,15 +1,13 @@
-// import React from 'react';
-import MentalHealthTips from '../components/Tips';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
-// import Nav from '../components/Nav';
 import Nav2 from '../components/Nav2';
+import Footer from '../components/Footer';
+import CreateJournalEntry from '../components/CreateJournalEntry';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Auth from '../utils/auth';
 
-const TipsPage = () => {
-  const [loginCheck, setLoginCheck] = useState(false);
+const CreateJournalEntryPage = () => {
+    const [loginCheck, setLoginCheck] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -30,14 +28,14 @@ const TipsPage = () => {
         return null;  // Render nothing until login check is done
     }
 
-  return (
-    <div className="App">
-      <Header />
-      <Nav2 />
-      <MentalHealthTips />
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header />
+            <Nav2 />
+            <CreateJournalEntry />
+            <Footer />
+        </div>
+    );
 };
 
-export default TipsPage;
+export default CreateJournalEntryPage;

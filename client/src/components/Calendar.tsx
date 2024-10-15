@@ -15,7 +15,7 @@ const Calendar = () => {
 
   const handleDateClick = (day: any) => {
     setSelectedDate(day);
-    navigate(`/journal-entry/${format(day, 'yyyy-MM-dd')}`);
+    navigate(`/journal-entry/${format(day, 'MM-dd-yyyy')}`);
   };
 
   const renderHeader = () => {

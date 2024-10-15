@@ -3,6 +3,8 @@ import {
     getAllJournalEntries, getJournalEntryById, getJournalEntryByDate, createJournalEntry, updateJournalEntry, 
     deleteJournalEntry, getAllJournalEntriesAllUsers,
 } from '../../controllers/journal-entry-controller';
+import { authenticateToken } from '../../middleware/auth';
+
 
 const journalEntryRouter = express.Router();
 
@@ -13,13 +15,15 @@ journalEntryRouter.get('/all', getAllJournalEntriesAllUsers);
 journalEntryRouter.get('/', getAllJournalEntries);
 
 // GET /api/journal-entries/date with date query parameter
-journalEntryRouter.get('/date', getJournalEntryByDate);
+// authenticateToken HERE!!!!
+journalEntryRouter.get('/date', authenticateToken, getJournalEntryByDate);
 
 // GET /api/journal-entries/:id - gets a single journal-entry by id
 journalEntryRouter.get('/:id', getJournalEntryById);
 
 // POST /api/journal-entries - creates a new journal-entry
-journalEntryRouter.post('/', createJournalEntry);
+// authenticateToken HERE!!!!
+journalEntryRouter.post('/', authenticateToken, createJournalEntry);
 
 // PUT /api/journal-entries/:id - updates a journal-entry by id
 journalEntryRouter.put('/:id', updateJournalEntry);

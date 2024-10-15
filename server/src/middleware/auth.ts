@@ -6,11 +6,11 @@ interface JwtPayload {
     userId: number; // used in journal-entry-controller ; signed in user's id from JWT payload is used to do its routes
 }
 
-interface AuthenticatedRequest extends Request {
-    user?: JwtPayload;  // Add user property to request object
-}
+// interface AuthenticatedRequest extends Request {
+//     user?: JwtPayload;  // Add user property to request object
+// }
 
-export const authenticateToken = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+export const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
     // verify the token exists and add the user data to the request object
     const authHeader = req.headers.authorization;
 
