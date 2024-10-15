@@ -38,9 +38,11 @@ const JournalEntryPage = () => {
     fetchEntry();
   }, [date]);
 
+  const formattedDate = new Date(date || '').toDateString();
+
   return (
     <div className="journal-entry-page">
-      <h1 className='journal-entry-page-header'>Journal Entry for {date}</h1>
+      <h1 className='journal-entry-page-header'>Journal Entry for {formattedDate}</h1>
       {entry ? (
         <div className="journal-entry">
           <p><strong>Mood:</strong> {entry.mood}</p>
