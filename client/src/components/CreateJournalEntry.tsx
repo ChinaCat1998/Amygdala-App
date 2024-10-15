@@ -30,7 +30,7 @@ const CreateJournalEntry = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!mood || triggers.length === 0 || !content) {
-            setValidationMessage('Please input your information.');
+            setValidationMessage('Please fill out all fields.');
             return;
         }
         setValidationMessage(''); // Clear any previous validation messages
@@ -61,7 +61,6 @@ const CreateJournalEntry = () => {
         <div className='journal-entry'>
             <form onSubmit={handleSubmit}>
                 <h1 className='journal-calendar-text'>{date}</h1>
-                {validationMessage && <p className='validation-message'>{validationMessage}</p>}
                 <div className="mood-description">Mood: {mood}</div>
                 <div className='mood-emojis'>
                     <div className="mood-select"><span onClick={() => setMood('great')} role="img" aria-label="great">😃</span>Great</div>
@@ -93,6 +92,7 @@ const CreateJournalEntry = () => {
                     />
                 </div>
                 <button className='submitButton' type="submit">Submit</button>
+                {validationMessage && <p className='validation-message'>{validationMessage}</p>}
             </form>
         </div>
     );
