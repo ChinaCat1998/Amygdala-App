@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { createJournalEntry } from '../api/journalEntryAPI';
+import Auth from '../utils/auth';
+
+const formatDate = (date: Date): string => {
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const year = date.getFullYear().toString();
+    
+    return `${month}-${day}-${year}`;
+};
 
 const JournalEntry = () => {
   const [mood, setMood] = useState('');
@@ -7,7 +17,10 @@ const JournalEntry = () => {
   const [newTrigger, setNewTrigger] = useState<string>('');
   const [content, setDescription] = useState<string>('');
   const [validationMessage, setValidationMessage] = useState<string>('');
-  const userId = 1;
+  const userId = Auth.getUserId() as number;
+  // const { date } = useParams<{ date: string }>() as { date: string };
+  const todaysDate = new Date();
+  const formattedDate = formatDate(todaysDate);
   const navigate = useNavigate();
 
   const handleAddTrigger = () => {
@@ -25,24 +38,21 @@ const JournalEntry = () => {
     }
     setValidationMessage(''); // Clear any previous validation messages
 
+    const todaysDate = new Date();
+    const formattedDate = formatDate(todaysDate);
+
     const journalData = {
-      date: new Date().toDateString(),
-      userId,
+      date: formattedDate,
       mood,
       triggers,
-      content
+      content,
+      userId,
     };
 
     try {
-      const response = await fetch('/api/journal-entries', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(journalData)
-      });
+      const response = await createJournalEntry(journalData);
 
-      if (response.ok) {
+      if (response) {
         console.log('Journal entry created successfully');
         navigate('/'); // Redirect to home page
       } else {
@@ -56,7 +66,7 @@ const JournalEntry = () => {
   return (
     <div className='journal-entry'>
       <form onSubmit={handleSubmit}>
-        <h1 className='journal-calendar-text'>{new Date().toDateString()}</h1>
+        <h1 className='journal-calendar-text'>{formattedDate}</h1>
         {validationMessage && <p className='validation-message'>{validationMessage}</p>}
         <div className="mood-description">Mood: {mood}</div>
         <div className='mood-emojis'>
