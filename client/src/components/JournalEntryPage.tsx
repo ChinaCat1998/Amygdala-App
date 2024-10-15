@@ -45,9 +45,9 @@ const JournalEntryPage = () => {
       <h1 className='journal-entry-page-header'>Journal Entry for {formattedDate}</h1>
       {entry ? (
         <div className="journal-entry">
-          <p><strong>Mood:</strong> {entry.mood}</p>
-          <p><strong>Triggers:</strong> {entry.triggers.join(', ')}</p>
-          <p><strong>Description:</strong> {entry.content}</p>
+          <p><strong>Mood:</strong> <span>{entry.mood}</span></p>
+          <p><strong>Triggers:</strong> <span>{entry.triggers.join(', ')}</span></p>
+          <p><strong>Description:</strong> <span>{entry.content}</span></p>
         </div>
       ) : ( 
         <>

@@ -19,7 +19,7 @@ const CalendarDataPage = () => {
                 // If not logged in, log out and redirect
                 Auth.logout();
                 alert(`Not Logged In/Session Expired!\nPlease Log In`);
-                navigate('/login');  // Redirect to login page
+                navigate('/');  // Redirect to login page
             }
         };
         checkLogin();

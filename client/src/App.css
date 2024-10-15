@@ -773,7 +773,7 @@ h2.mood-legend-title {
 
 .journal-entry p strong {
   flex: 1 0 25%;
-  text-align: right;
+  text-align: left;
 }
 
 .journal-entry p span {
