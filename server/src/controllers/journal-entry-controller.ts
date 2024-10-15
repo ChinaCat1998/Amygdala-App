@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { JournalEntry } from '../models/journalEntry';
 import { User } from '../models/user';
-import { isConstructorDeclaration } from 'typescript';
 
 // GET /api/journal-entries-allusers
 export const getAllJournalEntriesAllUsers = async (req: Request, res: Response) => {
@@ -48,11 +47,15 @@ export const getAllJournalEntries = async (req: Request, res: Response) => {
 // GET /api/journal-entries with date query parameter / for a specific user
 export const getJournalEntryByDate = async (req: Request, res: Response) => {
     const { date } = req.query as { date: string };
-    console.log(date);
+    const userId  = req.user?.userId;
+    if (!userId) {
+        res.status(403).json({ message: 'User ID not found' });
+    }
     try {
         const journalEntries = await JournalEntry.findAll({
             where: {
-                date: date,                             
+                date: date,
+                userId: userId,                             
             },
             include: [
                 {
@@ -96,7 +99,11 @@ export const getJournalEntryById = async (req: Request, res: Response) => {
 
 // POST /api/journal-entries
 export const createJournalEntry = async (req: Request, res: Response) => {
-    const { date, mood, triggers, content, userId } = req.body;
+    const { date, mood, triggers, content } = req.body;
+    const userId  = req.user?.userId as number;
+    if (!userId) {
+        res.status(403).json({ message: 'User ID not found' });
+    }
     try {
         const newJournalEntry = await JournalEntry.create({ date, mood, triggers, content, userId });
         res.status(201).json(newJournalEntry);

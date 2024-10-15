@@ -22,6 +22,16 @@ class AuthService {
         return null;
     }
 
+    // returns user id from token
+    getUserId() {
+        const token = this.getToken();
+        const decoded = this.decodeToken(token) as { userId: number };
+        if (decoded){
+            return decoded.userId;
+        }
+        return null;
+    }
+
     // returns value that indicates if token is expired
     isTokenExpired() {
         try {
