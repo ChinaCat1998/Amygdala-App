@@ -35,11 +35,12 @@ body {
 }
 
 .logo {
-  max-width: 100%;
+  max-width: 200px;
+  width: 100%;
   height: auto;
   display: block;
   text-align:center;
-  margin: 0 auto 20px;
+  margin: 0 auto;
 }
 
 nav.updated-nav-tk {
@@ -261,6 +262,10 @@ button:hover {
 
 /* -       Welcome Page-------- */
 
+.welcome-wrap {
+  background: linear-gradient(357.09deg, #92d9c6 -3.04%, #FFFFFF 30.85%, #FFFFFF 75.09%);
+}
+
 .welcome-wrap h1 {
    font-size: 3em;
    font-weight: 900;
@@ -332,11 +337,11 @@ header a.login-link {
   font-size: 1em;
 }
 
-header img {
+/* header img {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
-}
+} */
 
 h1 {
   font-family: Inter;
@@ -751,12 +756,29 @@ h2.mood-legend-title {
 
 .journal-entry {
   max-width: 500px;
-  margin: 0 auto 50px;
+  margin: 0 auto 20px;
   padding: 20px;
   background-color: #bfedf8;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+.journal-entry p {
+  line-height: 2em;
+  display: flex;
+  justify-content: left;
+  column-gap: 20px;
+}
+
+.journal-entry p strong {
+  flex: 1 0 25%;
+  text-align: right;
+}
+
+.journal-entry p span {
+  flex: 1 0 75%;
+  text-align: left;
 }
 
 .journal-calendar-text {
@@ -809,9 +831,10 @@ h2.mood-legend-title {
 
 .trigger {
   color: #002BC1;
-  background-color: #e0e0e0;
+  background-color: #82C6C9;
   padding: 5px 10px;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 input {
@@ -888,6 +911,7 @@ input {
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 40px;
 }
 
 .closeButton:hover {
@@ -896,7 +920,7 @@ input {
 
 .journal-entry-page-header {
   font-family: Inter;
-  margin: 50px 50px 50px 50px;
+  margin: 20px auto;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
