@@ -773,7 +773,7 @@ h2.mood-legend-title {
 
 .journal-entry p strong {
   flex: 1 0 25%;
-  text-align: right;
+  text-align: left;
 }
 
 .journal-entry p span {
@@ -901,7 +901,7 @@ input {
 
 /* Journal entry page  */
 
-.closeButton {
+.closeButton, .createButton {
     display: flex;
     padding: 10px 20px;
     border: none;
@@ -914,7 +914,7 @@ input {
     margin-bottom: 40px;
 }
 
-.closeButton:hover {
+.closeButton:hover, .createButton:hover {
   background-color: #373b85;
 }
 
