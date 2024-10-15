@@ -69,7 +69,7 @@ nav.updated-nav-tk a {
   border-radius: 15px;
 }
 
-nav.updated-nav-tk a:hover, nav.updated-nav-tk a:active {
+nav.updated-nav-tk a:hover, nav.updated-nav-tk a.active {
   color: #681e67;
   background: #abdad9;
 }

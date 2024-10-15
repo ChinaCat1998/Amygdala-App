@@ -39,7 +39,7 @@ const SignupPage = () => {
   <>
     <div className="signup-page">
       <header>
-        <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
+        <a href="/"><img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" /></a>
         <h1>Welcome!!</h1>
       </header>
       <form onSubmit={handleSignup} className="signup-wrap">

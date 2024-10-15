@@ -5,7 +5,7 @@ import logo from '../assets/logo/amygdala_logo-crop.jpg'
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="Amygdala - Healing Starts Here" /> 
+      <a href="/Home"><img src={logo} alt="Amygdala - Healing Starts Here" /></a>
     </header>
   );
 };
