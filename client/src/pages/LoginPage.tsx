@@ -1,5 +1,6 @@
 // pages/LoginPage.js
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo/amygdala_logo-crop.jpg';
 import '../App.css'; 
 import Footer from '../components/Footer';
@@ -9,6 +10,9 @@ import Auth from '../utils/auth';
 import { set } from 'date-fns';
 
 const LoginPage = () => {
+  const [loginCheck, setLoginCheck] = useState(false);
+  const navigate = useNavigate();
+
   const [loginData, setLoginData] = useState({
     username: '',
     password: ''
@@ -37,6 +41,16 @@ const LoginPage = () => {
       setErrorMsg('Failed to login. Please check your credentials.');
     }
   };
+  
+  useEffect(() => {
+        const checkLogin = () => {
+            if (Auth.loggedIn()) {
+                setLoginCheck(true);  // User is logged in
+                navigate('/Home');  // Redirect to home page
+            }
+        };
+        checkLogin();
+    }, [navigate]);
 
   return (
     <>
