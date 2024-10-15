@@ -6,11 +6,12 @@ import { JournalEntryData } from '../interfaces/JournalEntryData';
 
 
 
-const formatDateForQuery = (dateString: string) => {
-  const date = new Date(dateString);
-  const options = { weekday: 'short', month: 'short', day: '2-digit', year: 'numeric', timeZone: 'UTC' } as const;
-  return date.toLocaleDateString('en-US', options).replace(/,/g, ' ').replace(/\s+/g, ' ');
-};
+// const formatDateForQuery = (dateString: string) => {
+//   const date = new Date(dateString);
+//   console.log(date);
+//   const options = { weekday: 'short', month: 'short', day: '2-digit', year: 'numeric', timeZone: 'UTC' } as const;
+//   return date.toLocaleDateString('en-US', options).replace(/,/g, ' ').replace(/\s+/g, ' ');
+// };
 
 const JournalEntryPage = () => {
   const { date } = useParams<{ date: string }>();
@@ -20,10 +21,10 @@ const JournalEntryPage = () => {
   useEffect(() => {
     const fetchEntry = async () => {
       try {
-        const formattedDate = formatDateForQuery(date!);
-        const response = await retrieveJournalEntryByDate(formattedDate);
+        // const formattedDate = formatDateForQuery(date!);
+        const response = await retrieveJournalEntryByDate(date as string);
         const journalEntry = response[0];
-        if (response) {
+        if (journalEntry) {
           console.log(response);
           setEntry(journalEntry);
         } else {
@@ -46,8 +47,11 @@ const JournalEntryPage = () => {
           <p><strong>Triggers:</strong> {entry.triggers.join(', ')}</p>
           <p><strong>Description:</strong> {entry.content}</p>
         </div>
-      ) : (
-        <p className='journal-entry-page-paragraph'>No journal entry for this date.</p>
+      ) : ( 
+        <>
+          <p className='journal-entry-page-paragraph'>No journal entry for this date.</p>
+          <button className='createButton' onClick={() => navigate(`/journal-entry/${date}/create`)}>Create</button>
+        </>
       )}
       <button className='closeButton' onClick={() => navigate('/CalendarPage')}>Close</button>
     </div>
