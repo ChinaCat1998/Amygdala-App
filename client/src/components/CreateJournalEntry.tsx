@@ -48,7 +48,7 @@ const CreateJournalEntry = () => {
 
             if (response) {
                 console.log('Journal entry created successfully');
-                navigate('/'); // Redirect to home page
+                navigate('/Home'); // Redirect to home page
             } else {
                 console.error('Failed to create journal entry');
             }
