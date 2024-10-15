@@ -20,7 +20,8 @@ import TipsPage from './pages/TipsPage.tsx'
 import JournalPage from './pages/JournalPage.tsx';
 import SignupPage from './pages/SignUpPage.tsx';
 import LoginPage from './pages/LoginPage.tsx';
-import JournalEntryPage from './components/JournalEntryPage.tsx';
+import JournalEntryPage from './pages/JournalEntryPage.tsx';
+import CreateJournalEntryPage from './pages/CreateJournalEntry.tsx';
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: '/journal-entry/:date',
         element: <JournalEntryPage />
+      },
+      {
+        path: 'journal-entry/:date/create',
+        element: <CreateJournalEntryPage />
       }
     ],
   },
