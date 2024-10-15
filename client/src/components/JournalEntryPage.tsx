@@ -38,7 +38,7 @@ const JournalEntryPage = () => {
     fetchEntry();
   }, [date]);
 
-  const formattedDate = new Date(date || '').toString().slice(0, 16);
+  const formattedDate = new Date(date || '').toDateString();
 
   return (
     <div className="journal-entry-page">
