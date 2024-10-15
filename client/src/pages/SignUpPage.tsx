@@ -27,7 +27,7 @@ const SignupPage = () => {
     try {
       const data = await createUser(signUpData);
       alert('SignUp successful!');
-      window.location.assign('/LoginPage');
+      window.location.assign('/');
     }
     catch (error){
       console.error('Failed to signup: ', error);
