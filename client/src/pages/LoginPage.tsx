@@ -42,7 +42,7 @@ const LoginPage = () => {
     <>
     <div className="login-page">
       <header>
-        <img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" />
+        <a href="/"><img src={logo}  alt="Amygdala - Healing Starts Here" className="logo" /></a>
         <h1>Welcome Back!!</h1>
       </header>
       <form onSubmit={handleSubmit} className="login-wrap">
