@@ -53,4 +53,4 @@ Please View <a href="https://github.com/ChinaCat1998/Amygdala-App?tab=MIT-1-ov-f
 
 ## Live Deployment
 
-<a href="#">Live Deployment on Render</a>
+<a href="https://amygdala.onrender.com/">Live Deployment on Render</a>
