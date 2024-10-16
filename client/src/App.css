@@ -330,11 +330,13 @@ header {
   background-color:#ffffff;
 }
 
-header a.login-link {
+header .logoutButton {
   position: absolute;
   top: 0;
   right: 0;
   font-size: 1em;
+  cursor: pointer;
+  margin: 10px;
 }
 
 /* header img {
