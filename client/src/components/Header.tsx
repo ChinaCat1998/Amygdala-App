@@ -11,7 +11,7 @@ const Header = () => {
   const handleLogout = () => {
     Auth.logout();
     console.log('User logged out');
-    navigate('/LoginPage'); // Redirect to login page
+    navigate('/'); // Redirect to login page
   };
   return (
     <header>

@@ -331,6 +331,8 @@ header {
 }
 
 header .logoutButton {
+  display: flex;
+  align-items: center;
   position: absolute;
   top: 0;
   right: 0;
