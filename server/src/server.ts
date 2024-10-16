@@ -11,13 +11,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(express.static(path.join(__dirname, '../../client/dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use(express.json());
 app.use(routes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../client/dist/index.html')); // Serve index.html for all unmatched routes
+  res.sendFile(path.join(__dirname, '../client/dist/index.html')); // Serve index.html for all unmatched routes
 });
 
 // sync conntection to database
